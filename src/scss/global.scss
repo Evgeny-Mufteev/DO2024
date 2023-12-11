@@ -1,0 +1,102 @@
+@import "./base/mixins";
+@import "./base/fonts";
+@import "./base/reset";
+@import "./base/settings";
+@import "./base/sprite";
+@import "./base/vars";
+
+.none {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+  padding-right: 15px;
+}
+
+.page__title-h2 {
+  color: #120D0F;
+  font-family: Unbounded;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 34px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 30px;
+  }
+}
+
+.page__title-h3 {
+  color: #120D0F;
+  font-family: Unbounded;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+  }
+
+}
+
+.page__text {
+  color: #403E3F;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+
+  @media screen and (max-width: 1349px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    font-size: 14px;
+  }
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(64, 62, 63, 0.50);
+  backdrop-filter: blur(7px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19;
+
+  &.active {
+    display: block;
+  }
+}

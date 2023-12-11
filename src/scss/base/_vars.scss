@@ -1,0 +1,25 @@
+:root {
+  --container-width: 1280px;
+
+  @media (max-width: 1349px) {
+    --container-width: 984px;
+  }
+
+  @media (max-width: 1023px) {
+    --container-width: 728px;
+    --container-padding: 20px;
+  }
+
+  @media (max-width: 767px) {
+    --container-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    --container-padding: 12px;
+  }
+
+  --font-main: Montserrat,
+  sans-serif;
+  --main-color: #403E3F;
+  --base-transition: all .3s ease;
+}

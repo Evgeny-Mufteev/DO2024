@@ -1,0 +1,22 @@
+[
+  {
+    "src": "./assets/img/index/test-img-1.jpg",
+    "title": "Изображение в webp №1",
+    "alt": "Тестовое изображение 1"
+  },
+  {
+    "src": "./assets/img/index/test-img-2.jpg",
+    "title": "Изображение в webp №2",
+    "alt": "Тестовое изображение 2"
+  },
+  {
+    "src": "./assets/img/index/test-img-3.jpg",
+    "title": "Изображение в webp №3",
+    "alt": "Тестовое изображение 3"
+  },
+  {
+    "src": "./assets/img/index/test-img-4.jpg",
+    "title": "Изображение в webp №4",
+    "alt": "Тестовое изображение 4"
+  }
+]
