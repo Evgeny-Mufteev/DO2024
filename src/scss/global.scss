@@ -32,7 +32,7 @@
 }
 
 .page__title-h2 {
-  color: #120D0F;
+  color: var(--black-color);
   font-family: Unbounded;
   font-size: 54px;
   font-style: normal;
@@ -50,7 +50,7 @@
 }
 
 .page__title-h3 {
-  color: #120D0F;
+  color: var(--black-color);
   font-family: Unbounded;
   font-size: 40px;
   font-style: normal;
@@ -69,7 +69,7 @@
 }
 
 .page__text {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
