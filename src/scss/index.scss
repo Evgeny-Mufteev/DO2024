@@ -1,7 +1,9 @@
 .header {
-  position: absolute;
-  left: 80px;
-  z-index: 5;
+
+  &-content {
+    position: absolute;
+    z-index: 5;
+  }
 
   &__link {
     color: #120D0F;
@@ -10,6 +12,9 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
   }
 
   &__list {
@@ -17,29 +22,48 @@
     column-gap: 40px;
     padding: 23px 0;
   }
+
+  &__text {
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  &__text--hidden {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
 }
 
 .promo {
   margin-bottom: 110px;
+  position: relative;
 
   &__content {
     position: relative;
     height: 920px;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
-  &-img {
-    width: 631px;
-    height: 100%;
+  &-img-outer {
     position: absolute;
     top: 0;
     right: 0;
+    width: 631px;
+    height: 100%;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
   }
 
   &-info {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 80px;
 
     &__title {
       p {
@@ -499,40 +523,205 @@
 }
 
 .gallery {
+  overflow: visible;
   margin-bottom: 170px;
 
   &__item {
+
 
     img {
       height: 650px;
       width: auto;
       border-radius: 4px;
+      transform-origin: center center;
+      will-change: transform, opacity;
     }
   }
 
-  &__swiper {
-    overflow: visible;
-    position: relative;
-    z-index: 5;
-
-    &:focus {
-      outline: none;
-    }
+  &__slider {
+    display: flex;
+    gap: 40px;
+    width: calc(590px * 6 + 40px * 5);
   }
 
-  .swiper-slide:nth-child(3n+1) {
-    width: 840px;
-  }
-
-  .swiper-slide:nth-child(3n+2),
-  .swiper-slide:nth-child(3n+3) {
-    width: 290px;
-  }
 }
 
 .bonus {
-  height: 2500px;
+  margin-bottom: 170px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 70px;
+    margin-bottom: 80px;
+
+    &__text {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &-item {
+    padding-top: 40px;
+    border-bottom: 1px solid #120D0F;
+    height: 91px;
+    overflow: hidden;
+
+    &.expanded {
+      height: 343px;
+    }
+
+    &:first-child {
+      border-top: 1px solid #120D0F;
+    }
+
+    &__box {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+    }
+
+    &__info {
+      max-width: 550px;
+    }
+
+    &__text {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      margin-bottom: 40px;
+    }
+
+
+    &__btn {
+      width: 409px;
+      height: 65px;
+      border-radius: 52px;
+      transition: var(--base-transition);
+      border: 1px solid #120D0F;
+      background: #C0235C;
+      color: #FFF;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+
+      &:hover {
+        background: #9F0E42;
+      }
+    }
+
+    &__img {
+      width: 437px;
+      height: 192px;
+
+      img {
+        width: inherit;
+        height: inherit;
+      }
+    }
+
+  }
 }
+
+.partners {
+  margin-bottom: 170px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &-holder {
+    margin-bottom: 100px;
+  }
+
+  &-content {
+    display: flex;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &._left {
+      .partners__list {
+        animation: ticker 20s infinite linear;
+      }
+    }
+
+    &._right {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: end;
+      width: auto;
+      overflow: hidden;
+
+      .partners__list {
+        flex: 0 0 auto;
+        animation: ticker-reverse 20s infinite linear;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 20px;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    width: 147px;
+    height: 96px;
+    padding: 10px;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  @keyframes ticker {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes ticker-reverse {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+
+
+
+
 
 
 @media screen and (max-width: 1349px) {}

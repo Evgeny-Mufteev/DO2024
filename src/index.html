@@ -13,23 +13,27 @@
 
 <body>
   <header class="header header-index">
-    <ul class="header__list">
-      <li class="header__item">
-        <a class="header__link" href="javascript:void(0);">билеты</a>
-      </li>
-      <li class="header__item">
-        <a class="header__link" href="javascript:void(0);">спикеры</a>
-      </li>
-      <li class="header__item">
-        <a class="header__link" href="javascript:void(0);">о конференции</a>
-      </li>
-      <li class="header__item">
-        <a class="header__link" href="javascript:void(0);">премия</a>
-      </li>
-      <li class="header__item">
-        <a class="header__link" href="javascript:void(0);">программа</a>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="header-content">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link" href="javascript:void(0);">билеты</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="javascript:void(0);">спикеры</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="javascript:void(0);">о конференции</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="javascript:void(0);">премия</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="javascript:void(0);">программа</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
   <main class="main">
     <section class="promo">
@@ -49,6 +53,8 @@
             <button class="promo-info__btn _white">стать партнёром</button>
           </div>
         </div>
+      </div>
+      <div class="promo-img-outer">
         <div class="promo-img">
           <img src="./assets/img/global/header-index.png" alt="header-index">
         </div>
@@ -154,6 +160,18 @@
               Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
               Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
               Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
+            </p>
+          </div>
+          <div class="speakers-item">
+            <div class="speakers-item__img">
+              <img src="./assets/img/index/speaker2.png" alt="speaker">
+            </div>
+            <p class="speakers-item__name">Илья Редько</p>
+            <p class="speakers-item__desc">
+              Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+              Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+              Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+              Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
             </p>
           </div>
           <div class="speakers-item">
@@ -301,44 +319,298 @@
     </section>
     <section class="gallery">
       <div class="container">
-        <div class="gallery__swiper swiper" tabindex="0">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="gallery__item">
-                <img src="./assets/img/index/gallery.jpg" alt="">
+        <div class="gallery__slider">
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bonus">
+      <div class="container">
+        <div class="bonus-header">
+          <h2 class="page__title-h2 bonus-header__title">независимая премия</h2>
+          <div class="bonus-header__text">
+            <p>
+              Премия среди digital-компаний рассчитана на региональные digital-агентства, которым есть что показать и
+              чем поделиться. Будем рады видеть в числе участников коллег из Нижнего Новгорода, Казани, Кирова, Пензы,
+              Владимира, других регионов и областей.
+            </p>
+          </div>
+        </div>
+        <div class="bonus-content">
+          <div class="bonus-item">
+            <h3 class="bonus-item__title page__title-h3">прорыв года</h3>
+            <div class="bonus-item__box">
+              <div class="bonus-item__info">
+                <p class="bonus-item__text">
+                  Номинация для молодых агентств до 5 лет (с момент регистрации юр. лица) и штатом до 15 человек.
+                  Расскажите, как вы стартовали, что было сложного и интересного, куда вы стремитесь и о чем мечтаете
+                </p>
+                <button class="bonus-item__btn">подать заявку</button>
+              </div>
+              <div class="bonus-item__img">
+                <img src="./assets/img/index/bonus1.png" alt="">
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="gallery__item">
-                <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="bonus-item">
+            <h3 class="bonus-item__title page__title-h3">дизайн года</h3>
+            <div class="bonus-item__box">
+              <div class="bonus-item__info">
+                <p class="bonus-item__text">
+                  В этой номинации мы ждём от вас кейсы по дизайну сайтов, сервисов или социальных сетей. Если проект
+                  ещё не запущен, но готовы макеты и есть действующий договор, который вы готовы предоставить —
+                  присылайте!
+                </p>
+                <button class="bonus-item__btn">подать заявку</button>
+              </div>
+              <div class="bonus-item__img">
+                <img src="./assets/img/index/bonus2.png" alt="">
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="gallery__item">
-                <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="bonus-item">
+            <h3 class="bonus-item__title page__title-h3">сайт года</h3>
+            <div class="bonus-item__box">
+              <div class="bonus-item__info">
+                <p class="bonus-item__text">
+                  За прошедший 2022 год запустили интересный сайт? Присылайте! Поделитесь, какая была задача, какие
+                  сложности, какие решения принимались и какой функционал в итоге у вас получился!
+                </p>
+                <button class="bonus-item__btn">подать заявку</button>
+              </div>
+              <div class="bonus-item__img">
+                <img src="./assets/img/index/bonus3.png" alt="">
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="gallery__item">
-                <img src="./assets/img/index/gallery.jpg" alt="">
+          </div>
+          <div class="bonus-item">
+            <h3 class="bonus-item__title page__title-h3">seo-кейс года</h3>
+            <div class="bonus-item__box">
+              <div class="bonus-item__info">
+                <p class="bonus-item__text">
+                  Номинация для компаний, которые собрали самое полное семантическое ядро, увеличил конверсии в тысячу
+                  раз и пригнал тонну трафика. Расскажите нам о себе и своем проекте
+                </p>
+                <button class="bonus-item__btn">подать заявку</button>
+              </div>
+              <div class="bonus-item__img">
+                <img src="./assets/img/index/bonus4.png" alt="">
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="gallery__item">
-                <img src="./assets/img/index/gallery2.jpg" alt="">
+          </div>
+          <div class="bonus-item">
+            <h3 class="bonus-item__title page__title-h3">smm-кейс года</h3>
+            <div class="bonus-item__box">
+              <div class="bonus-item__info">
+                <p class="bonus-item__text">
+                  Данная номинация для тех, кто классно оформляет и ведёт аккаунты, пишет интересные посты, снимает
+                  Reels, крутит таргетированную рекламу. Ждём от вас кейс-гордость
+                </p>
+                <button class="bonus-item__btn">подать заявку</button>
+              </div>
+              <div class="bonus-item__img">
+                <img src="./assets/img/index/bonus5.png" alt="">
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="bonus">
-      <div class="container"></div>
+    <section class="partners">
+      <h2 class="page__title-h2 partners__title">партнёры</h2>
+      <div class="partners-holder">
+        <div class="partners-content _left">
+          <div class="partners__list">
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 1">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 2">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 7">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 8">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+          </div>
+        </div>
+        <div class="partners-content _right">
+          <div class="partners__list">
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 1">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 2">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 7">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 8">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 9">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 10">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 11">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 12">
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="page__title-h3 partners__subtitle">информационные партнёры</h3>
+      <div class="partners-block">
+        <div class="partners-content _left">
+          <div class="partners__list">
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 1">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 2">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 7">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 8">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+          </div>
+        </div>
+        <div class="partners-content _right">
+          <div class="partners__list">
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 1">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 2">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 3">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 4">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 5">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 6">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners1.png" alt="Item 7">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners2.png" alt="Item 8">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners3.png" alt="Item 9">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners4.png" alt="Item 10">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners5.png" alt="Item 11">
+            </div>
+            <div class="partners__item">
+              <img src="./assets/img/index/partners6.png" alt="Item 12">
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <div class="overlay"></div>
+
+
+  <script src="./assets/plugins/gsap/gsap.min.js"></script>
+  <script src="./assets/plugins/scroll-magic/ScrollMagic.min.js"></script>
+  <script src="./assets/plugins/gsap/animation.gsap.min.js"></script>
+  <script src="./assets/plugins/gsap/ScrollTrigger.min.js"></script>
 
   <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
   <script src="./assets/plugins/pristine/pristine.min.js"></script>

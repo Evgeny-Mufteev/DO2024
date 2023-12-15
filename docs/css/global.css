@@ -1,11 +1,4 @@
 @font-face {
-  src: local("Montserrat"), url("/assets/fonts/Montserrat-light.woff2") format("woff2"), url("/assets/fonts/Montserrat-light.woff") format("woff"), url("/assets/fonts/Montserrat-light.ttf") format("ttf"), url("/assets/fonts/Montserrat-light.eot") format("eot");
-  font-family: "Montserrat";
-  font-style: "normal";
-  font-weight: 300;
-}
-
-@font-face {
   src: local("Montserrat"), url("/assets/fonts/Montserrat-Regular.woff2") format("woff2"), url("/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/assets/fonts/Montserrat-Regular.ttf") format("ttf"), url("/assets/fonts/Montserrat-Regular.eot") format("eot");
   font-family: "Montserrat";
   font-style: "normal";
@@ -13,24 +6,17 @@
 }
 
 @font-face {
-  src: local("Montserrat"), url("/assets/fonts/Montserrat-Medium.woff2") format("woff2"), url("/assets/fonts/Montserrat-Medium.woff") format("woff"), url("/assets/fonts/Montserrat-Medium.ttf") format("ttf"), url("/assets/fonts/Montserrat-Medium.eot") format("eot");
-  font-family: "Montserrat";
+  src: local("Unbounded"), url("/assets/fonts/Unbounded-Regular.woff2") format("woff2"), url("/assets/fonts/Unbounded-Regular.woff") format("woff"), url("/assets/fonts/Unbounded-Regular.ttf") format("ttf"), url("/assets/fonts/Unbounded-Regular.eot") format("eot");
+  font-family: "Unbounded";
+  font-style: "normal";
+  font-weight: 400;
+}
+
+@font-face {
+  src: local("Unbounded"), url("/assets/fonts/Unbounded-Medium.woff2") format("woff2"), url("/assets/fonts/Unbounded-Medium.woff") format("woff"), url("/assets/fonts/Unbounded-Medium.ttf") format("ttf"), url("/assets/fonts/Unbounded-Medium.eot") format("eot");
+  font-family: "Unbounded";
   font-style: "normal";
   font-weight: 500;
-}
-
-@font-face {
-  src: local("Montserrat"), url("/assets/fonts/Montserrat-SemiBold.woff2") format("woff2"), url("/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/assets/fonts/Montserrat-SemiBold.ttf") format("ttf"), url("/assets/fonts/Montserrat-SemiBold.eot") format("eot");
-  font-family: "Montserrat";
-  font-style: "normal";
-  font-weight: 600;
-}
-
-@font-face {
-  src: local("Montserrat"), url("/assets/fonts/Montserrat-Bold.woff2") format("woff2"), url("/assets/fonts/Montserrat-Bold.woff") format("woff"), url("/assets/fonts/Montserrat-Bold.ttf") format("ttf"), url("/assets/fonts/Montserrat-Bold.eot") format("eot");
-  font-family: "Montserrat";
-  font-style: "normal";
-  font-weight: 700;
 }
 
 /* Reset and base styles  */
@@ -201,6 +187,7 @@ picture source {
   padding: 0 var(--container-padding);
   max-width: var(--container-width);
   margin: 0 auto;
+  position: relative;
 }
 
 .desc-figure {
@@ -249,16 +236,51 @@ picture source {
   background: #fff;
   display: block;
   padding: 12px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: var(--base-transition);
+  transition: var(--base-transition);
+}
+
+.filters-icon {
+  fill: #fff;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.dimensions-icon,
+.square-icon,
+.rooms-icon,
+.bathrooms-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--accent-color);
+}
+
+.gallery-icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.close-icon {
+  width: 30px;
+  height: 30px;
 }
 
 :root {
-  --container-width: 1210px;
-  --container-padding: 50px;
-  --font-main: Montserrat, Arial, sans-serif;
-  --light-color: #F2F2F2;
-  --bg-color: #fff;
-  --text-color: #0A1938;
-  --accent-color: #C60000;
+  --container-width: 1280px;
+  --font-main: Montserrat,
+  sans-serif;
+  --main-color: #403E3F;
+  --gray-color: #828282;
+  --black-color: #120D0F;
+  --red-color: #C0235C;
+  --red-hover-color: #9F0E42;
+  --white-color: #FFF;
+  --light-pink-color: #FFFAFC;
+  --light-pink-color2: #FFEBF3;
+  --base-transition: all .3s ease;
 }
 
 .none {
@@ -279,35 +301,59 @@ picture source {
   overflow: hidden;
 }
 
+.main {
+  overflow: hidden;
+}
+
 .no-scroll {
   overflow-y: hidden;
+  padding-right: 15px;
 }
 
-.about__title-h2 {
-  color: var(--text-color);
-  font-size: 38px;
+.page__title-h2 {
+  color: var(--black-color);
+  font-family: Unbounded;
+  font-size: 54px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
-  width: 802px;
+  text-transform: uppercase;
 }
 
-.about__title-h3 {
-  color: var(--text-color);
-  font-size: 20px;
+.page__title-h3 {
+  color: var(--black-color);
+  font-family: Unbounded;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  /* 120% */
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
-.about__text p {
-  color: var(--text-color);
+.page__text {
+  color: var(--main-color);
+  font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  /* 133.333% */
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(64, 62, 63, 0.5);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19;
+}
+
+.overlay.active {
+  display: block;
 }
 
 @media screen and (max-width: 1365px) {
@@ -331,18 +377,25 @@ picture source {
     width: 40px;
     height: 40px;
   }
+}
 
-  .about__title-h2 {
-    font-size: 40px;
-    width: 636px;
+@media screen and (max-width: 1349px) {
+  .dimensions-icon,
+  .square-icon,
+  .rooms-icon,
+  .bathrooms-icon {
+    width: 22px;
+    height: 22px;
   }
 
-  .about__title-h3 {
-    font-size: 18px;
+  .page__text {
+    font-size: 16px;
   }
+}
 
-  .about__text p {
-    font-size: 14px;
+@media (max-width: 1349px) {
+  :root {
+    --container-width: 984px;
   }
 }
 
@@ -351,6 +404,35 @@ picture source {
     width: 60px;
     height: 60px;
     padding: 14px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .dimensions-icon,
+  .square-icon,
+  .rooms-icon,
+  .bathrooms-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .page__title-h2 {
+    font-size: 34px;
+  }
+
+  .page__title-h3 {
+    font-size: 28px;
+  }
+
+  .page__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --container-width: 728px;
+    --container-padding: 20px;
   }
 }
 
@@ -393,14 +475,31 @@ picture source {
     padding: 10px;
   }
 
-  .about__title-h2 {
+  .dimensions-icon,
+  .square-icon,
+  .rooms-icon,
+  .bathrooms-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .page__title-h2 {
+    font-size: 30px;
+  }
+
+  .page__title-h3 {
     font-size: 24px;
-    width: 100%;
   }
 }
 
 @media (max-width: 767px) {
   :root {
-    --container-padding: 15px;
+    --container-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 12px;
   }
 }
