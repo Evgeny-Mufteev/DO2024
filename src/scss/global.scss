@@ -100,3 +100,158 @@
     display: block;
   }
 }
+
+.footer {
+  position: relative;
+
+  &__social {
+    display: flex;
+    align-items: center;
+    column-gap: 36px;
+    margin-bottom: 50px;
+
+    &-item {
+      width: 46px;
+      height: 46px;
+      border-radius: 4px;
+      background: #C0235C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: var(--base-transition);
+
+      &:hover {
+        background: #9F0E42;
+      }
+    }
+  }
+
+  &__adress {
+    width: 498px;
+    margin-bottom: 30px;
+
+    p {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    a {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__mail {
+    margin-top: 30px;
+
+    a {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin: 100px 0 50px;
+
+    a {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    column-gap: 45px;
+
+    a {
+      color: #403E3F;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    height: 694px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 740px;
+    height: 694px;
+
+    img {
+      border-radius: 200px 0px 0px 0px;
+    }
+  }
+
+  &__line {
+    height: 14px;
+    background: #C0235C;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--red-color);
+  border-radius: 2px;
+  border: px solid var(--red-color);
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19;
+  background: rgba(64, 62, 63, 0.50);
+  backdrop-filter: blur(7px);
+
+  &.active {
+    display: block;
+  }
+}

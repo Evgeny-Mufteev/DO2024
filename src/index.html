@@ -6,6 +6,7 @@
   "title": "index page"
   })
 
+  <link href="./assets/plugins/animate/animate.min.css" rel="stylesheet">
   <link href="./assets/plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="./css/global.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
@@ -17,19 +18,29 @@
       <div class="header-content">
         <ul class="header__list">
           <li class="header__item">
-            <a class="header__link" href="javascript:void(0);">билеты</a>
+            <a class="header__link" href="javascript:void(0);">
+              <div class="header__line" data-text="проекты">проекты</div>
+            </a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="javascript:void(0);">спикеры</a>
+            <a class="header__link" href="javascript:void(0);">
+              <div class="header__line" data-text="спикеры">спикеры</div>
+            </a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="javascript:void(0);">о конференции</a>
+            <a class="header__link" href="javascript:void(0);">
+              <div class="header__line" data-text="о конференции">о конференции</div>
+            </a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="javascript:void(0);">премия</a>
+            <a class="header__link" href="javascript:void(0);">
+              <div class="header__line" data-text="премия">премия</div>
+            </a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="javascript:void(0);">программа</a>
+            <a class="header__link" href="javascript:void(0);">
+              <div class="header__line" data-text="программа">программа</div>
+            </a>
           </li>
         </ul>
       </div>
@@ -40,22 +51,24 @@
       <div class="promo__content">
         <div class="promo-info">
           <h1 class="promo-info__title">
-            <p>Digital-</p>
-            <p>Оттепель</p>
+            <p class="animate__animated animate__fadeInLeft animate__slow">Digital-</p>
+            <p class="animate__animated animate__fadeInRight animate__slow">Оттепель</p>
           </h1>
-          <div class="promo-info__box">
-            <p class="promo-info__date">4-5 апреля, 2024</p>
-            <p class="promo-info__adress">г. Нижний Новгород Академия Маяк им. А.Д. Сахарова, Нижне-Волжская
-              набережная, д. 11</p>
-          </div>
-          <div class="promo-info__btns">
-            <button class="promo-info__btn _red">Купить билет</button>
-            <button class="promo-info__btn _white">стать партнёром</button>
+          <div class="promo-info__holder animate__animated animate__fadeInLeft animate__slower">
+            <div class="promo-info__box">
+              <p class="promo-info__date">4-5 апреля, 2024</p>
+              <p class="promo-info__adress">г. Нижний Новгород Академия Маяк им. А.Д. Сахарова, Нижне-Волжская
+                набережная, д. 11</p>
+            </div>
+            <div class="promo-info__btns">
+              <button class="promo-info__btn _red">Купить билет</button>
+              <button class="promo-info__btn _white">стать партнёром</button>
+            </div>
           </div>
         </div>
       </div>
       <div class="promo-img-outer">
-        <div class="promo-img">
+        <div class="promo-img animate__animated animate__fadeIn">
           <img src="./assets/img/global/header-index.png" alt="header-index">
         </div>
       </div>
@@ -65,7 +78,7 @@
         <h2 class="page__title-h2 tickets__title">билеты</h2>
         <p class="tickets__text">Внимание! Количество offline билетов строго ограничено</p>
         <div class="tickets__content">
-          <div class="tickets__item _large">
+          <div class="tickets__item _large" id="offline_afterparty">
             <div class="tickets__item-header">
               <h2 class="page__title-h3 tickets__caption">офлайн + АФТЕРПАТИ</h2>
               <ul class="tickets__list">
@@ -84,10 +97,11 @@
                 <p class="tickets__price-new">12 999 руб.</p>
                 <p class="tickets__price-old">14 999 руб.</p>
               </div>
-              <button class="tickets__btn">купить билет</button>
+              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+                билет</button>
             </div>
           </div>
-          <div class="tickets__item _small">
+          <div class="tickets__item _small" id="offline">
             <div class="tickets__item-header">
               <h2 class="page__title-h3 tickets__caption">офлайн</h2>
               <ul class="tickets__list">
@@ -105,10 +119,11 @@
                 <p class="tickets__price-new">2 999 руб.</p>
                 <p class="tickets__price-old">3 999 руб.</p>
               </div>
-              <button class="tickets__btn">купить билет</button>
+              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+                билет</button>
             </div>
           </div>
-          <div class="tickets__item _small">
+          <div class="tickets__item _small" id="online">
             <div class="tickets__item-header">
               <h2 class="page__title-h3 tickets__caption">онлайн</h2>
               <ul class="tickets__list">
@@ -123,10 +138,11 @@
                 <p class="tickets__price-new">2 999 руб.</p>
                 <p class="tickets__price-old">3 999 руб.</p>
               </div>
-              <button class="tickets__btn">купить билет</button>
+              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+                билет</button>
             </div>
           </div>
-          <div class="tickets__item _large">
+          <div class="tickets__item _large" id="afterparty">
             <div class="tickets__item-header">
               <h2 class="page__title-h3 tickets__caption">только АФТЕРПАТИ</h2>
               <ul class="tickets__list">
@@ -141,7 +157,8 @@
                 <p class="tickets__price-new">7 999 руб.</p>
                 <p class="tickets__price-old">14 999 руб.</p>
               </div>
-              <button class="tickets__btn">купить билет</button>
+              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+                билет</button>
             </div>
           </div>
         </div>
@@ -292,7 +309,7 @@
           <div class="organizers-item">
             <div class="organizers-item__box">
               <div class="organizers-item__img">
-                <img src="./assets/img/index/speaker1.png" alt="">
+                <img src="./assets/img/index/dir1.png" alt="">
               </div>
               <div class="organizers-item__sign">главный организатор конференции</div>
             </div>
@@ -305,7 +322,7 @@
           <div class="organizers-item _reverse">
             <div class="organizers-item__box">
               <div class="organizers-item__img">
-                <img src="./assets/img/index/speaker1.png" alt="">
+                <img src="./assets/img/index/dir2.png" alt="">
               </div>
               <div class="organizers-item__sign">продюссер конференции</div>
             </div>
@@ -600,11 +617,55 @@
           </div>
         </div>
       </div>
+      <div class="partners-btns">
+        <button class="partners-btn">стать партнёром</button>
+      </div>
     </section>
 
   </main>
-
+  @@include('include/footer.html')
   <div class="overlay"></div>
+
+  <!-- попап покупки билетов -->
+  <div class="modal-ticket js-modal-block" id="modal-ticket">
+    <div class="modal-ticket__succes"></div>
+    <div class="modal-ticket__content">
+      <div class="modal-ticket__header">
+        <div class="modal-ticket__title">купить билет</div>
+        <div class="modal-ticket__subtitle">Перед оплатой необходимо оставить свои актуальные контактные данные</div>
+      </div>
+      <form class="modal-ticket__form js-modal-ticket" action="/file_name/" method="post" name="modal_ticket"
+        novalidate="true">
+        <div class="modal-ticket__box">
+          <div class="modal-ticket__input-wrap ">
+            <input type="text" class="modal-ticket__input" placeholder="ФИО" name="full-name">
+          </div>
+          <div class="modal-ticket__input-wrap">
+            <input type="email" class="modal-ticket__input" placeholder="Email*" name="email">
+          </div>
+          <div class="modal-ticket__input-wrap">
+            <input type="tel" class="modal-ticket__input" placeholder="+7 (999) 999-99-99*" minlength="18" name="phone">
+          </div>
+          <div class="modal-ticket__checkbox-wrap form-group">
+            <input type="checkbox" class="modal-ticket__checkbox" id="privacy-policy" name="privacy-policy">
+            <label for="privacy-policy">
+              <span class="privacy-policy__text">
+                Я согласен на обработку персональных данных и ознакомился с
+                <a href="javascript:void(0);" class="privacy-policy__link" target="_blank">
+                  политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+        </div>
+        <button class="modal-ticket__btn" type="submit">Перейти к оплате</button>
+      </form>
+    </div>
+    <button class="modal-ticket__close js-close">
+      <svg class="icon-close">
+        <use href="./assets/svg/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
 
 
   <script src="./assets/plugins/gsap/gsap.min.js"></script>
@@ -614,6 +675,7 @@
 
   <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
   <script src="./assets/plugins/pristine/pristine.min.js"></script>
+  <script src="./js/main.js"></script>
   <script src="./js/index.js"></script>
 </body>
 
