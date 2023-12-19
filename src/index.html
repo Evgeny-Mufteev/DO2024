@@ -75,8 +75,56 @@
     </section>
     <section class="tickets">
       <div class="container">
-        <h2 class="page__title-h2 tickets__title">билеты</h2>
-        <p class="tickets__text">Внимание! Количество offline билетов строго ограничено</p>
+        <div class="tickets__header">
+          <div class="tickets__header-left">
+            <h2 class="page__title-h2 tickets__title">билеты</h2>
+            <p class="tickets__text">Внимание! Количество offline билетов строго ограничено</p>
+          </div>
+          <div class="tickets__header-right">
+            <div class="timer">
+              <p class="timer-title">До повышения цен</p>
+              <div class="timer-content">
+                <div class="countdown">
+                  <div id="days" class="timer__days">
+                    <span class="timer__number">5</span>
+                  </div>
+
+                  <div class="countdown__block">
+                    <div id="hours" class="timer__hours">
+                      <span class="timer__number">18</span>
+                    </div>
+                    <p class="timer__colon">:</p>
+                    <div id="minutes" class="timer__minutes">
+                      <span class="timer__number">36</span>
+                    </div>
+                    <p class="timer__colon">:</p>
+                    <div id="seconds" class="timer__seconds">
+                      <span class="timer__number">45</span>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="countdown-text">
+                  <div class="timer__days">
+                    <span class="timer__text">дней</span>
+                  </div>
+
+                  <div class="countdown__block">
+                    <div class="timer__hours">
+                      <span class="timer__text">часов</span>
+                    </div>
+                    <div class="timer__minutes">
+                      <span class="timer__text">минут</span>
+                    </div>
+                    <div class="timer__seconds">
+                      <span class="timer__text">секунд</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="tickets__content">
           <div class="tickets__item _large" id="offline_afterparty">
             <div class="tickets__item-header">
@@ -97,7 +145,8 @@
                 <p class="tickets__price-new">12 999 руб.</p>
                 <p class="tickets__price-old">14 999 руб.</p>
               </div>
-              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+              <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
+                type="button">купить
                 билет</button>
             </div>
           </div>
@@ -119,7 +168,8 @@
                 <p class="tickets__price-new">2 999 руб.</p>
                 <p class="tickets__price-old">3 999 руб.</p>
               </div>
-              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+              <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
+                type="button">купить
                 билет</button>
             </div>
           </div>
@@ -138,7 +188,8 @@
                 <p class="tickets__price-new">2 999 руб.</p>
                 <p class="tickets__price-old">3 999 руб.</p>
               </div>
-              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+              <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
+                type="button">купить
                 билет</button>
             </div>
           </div>
@@ -157,7 +208,8 @@
                 <p class="tickets__price-new">7 999 руб.</p>
                 <p class="tickets__price-old">14 999 руб.</p>
               </div>
-              <button class="tickets__btn js-modal-btn" data-modal-target="#modal-ticket" type="button">купить
+              <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
+                type="button">купить
                 билет</button>
             </div>
           </div>
@@ -281,8 +333,9 @@
           </div>
         </div>
         <div class="speakers__btns">
-          <button class="speakers__btn _red">Хочу стать спикером</button>
-          <button class="speakers__btn _white">смотреть всех спикеров</button>
+          <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker">Хочу стать
+            спикером</button>
+          <a class="speakers__btn _white" href="javascript:void(0);">смотреть всех спикеров</a>
         </div>
       </div>
     </section>
@@ -338,22 +391,31 @@
       <div class="container">
         <div class="gallery__slider">
           <div class="gallery__item">
-            <img src="./assets/img/index/gallery.jpg" alt="">
+            <img src="./assets/img/index/gallery1.jpg" alt="">
           </div>
           <div class="gallery__item">
             <img src="./assets/img/index/gallery2.jpg" alt="">
           </div>
           <div class="gallery__item">
-            <img src="./assets/img/index/gallery2.jpg" alt="">
+            <img src="./assets/img/index/gallery3.jpg" alt="">
           </div>
           <div class="gallery__item">
-            <img src="./assets/img/index/gallery.jpg" alt="">
+            <img src="./assets/img/index/gallery4.jpg" alt="">
           </div>
           <div class="gallery__item">
-            <img src="./assets/img/index/gallery2.jpg" alt="">
+            <img src="./assets/img/index/gallery5.jpg" alt="">
           </div>
           <div class="gallery__item">
-            <img src="./assets/img/index/gallery2.jpg" alt="">
+            <img src="./assets/img/index/gallery6.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery7.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery8.jpg" alt="">
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/img/index/gallery9.jpg" alt="">
           </div>
         </div>
       </div>
@@ -371,7 +433,7 @@
           </div>
         </div>
         <div class="bonus-content">
-          <div class="bonus-item">
+          <div class="bonus-item" data-name="прорыв года">
             <h3 class="bonus-item__title page__title-h3">прорыв года</h3>
             <div class="bonus-item__box">
               <div class="bonus-item__info">
@@ -379,14 +441,14 @@
                   Номинация для молодых агентств до 5 лет (с момент регистрации юр. лица) и штатом до 15 человек.
                   Расскажите, как вы стартовали, что было сложного и интересного, куда вы стремитесь и о чем мечтаете
                 </p>
-                <button class="bonus-item__btn">подать заявку</button>
+                <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
               </div>
               <div class="bonus-item__img">
                 <img src="./assets/img/index/bonus1.png" alt="">
               </div>
             </div>
           </div>
-          <div class="bonus-item">
+          <div class="bonus-item" data-name="дизайн года">
             <h3 class="bonus-item__title page__title-h3">дизайн года</h3>
             <div class="bonus-item__box">
               <div class="bonus-item__info">
@@ -395,14 +457,14 @@
                   ещё не запущен, но готовы макеты и есть действующий договор, который вы готовы предоставить —
                   присылайте!
                 </p>
-                <button class="bonus-item__btn">подать заявку</button>
+                <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
               </div>
               <div class="bonus-item__img">
                 <img src="./assets/img/index/bonus2.png" alt="">
               </div>
             </div>
           </div>
-          <div class="bonus-item">
+          <div class="bonus-item" data-name="сайт года">
             <h3 class="bonus-item__title page__title-h3">сайт года</h3>
             <div class="bonus-item__box">
               <div class="bonus-item__info">
@@ -410,14 +472,14 @@
                   За прошедший 2022 год запустили интересный сайт? Присылайте! Поделитесь, какая была задача, какие
                   сложности, какие решения принимались и какой функционал в итоге у вас получился!
                 </p>
-                <button class="bonus-item__btn">подать заявку</button>
+                <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
               </div>
               <div class="bonus-item__img">
                 <img src="./assets/img/index/bonus3.png" alt="">
               </div>
             </div>
           </div>
-          <div class="bonus-item">
+          <div class="bonus-item" data-name="seo-кейс года">
             <h3 class="bonus-item__title page__title-h3">seo-кейс года</h3>
             <div class="bonus-item__box">
               <div class="bonus-item__info">
@@ -425,14 +487,14 @@
                   Номинация для компаний, которые собрали самое полное семантическое ядро, увеличил конверсии в тысячу
                   раз и пригнал тонну трафика. Расскажите нам о себе и своем проекте
                 </p>
-                <button class="bonus-item__btn">подать заявку</button>
+                <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
               </div>
               <div class="bonus-item__img">
                 <img src="./assets/img/index/bonus4.png" alt="">
               </div>
             </div>
           </div>
-          <div class="bonus-item">
+          <div class="bonus-item" data-name="smm-кейс года">
             <h3 class="bonus-item__title page__title-h3">smm-кейс года</h3>
             <div class="bonus-item__box">
               <div class="bonus-item__info">
@@ -440,7 +502,7 @@
                   Данная номинация для тех, кто классно оформляет и ведёт аккаунты, пишет интересные посты, снимает
                   Reels, крутит таргетированную рекламу. Ждём от вас кейс-гордость
                 </p>
-                <button class="bonus-item__btn">подать заявку</button>
+                <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
               </div>
               <div class="bonus-item__img">
                 <img src="./assets/img/index/bonus5.png" alt="">
@@ -618,36 +680,47 @@
         </div>
       </div>
       <div class="partners-btns">
-        <button class="partners-btn">стать партнёром</button>
+        <button class="partners-btn js-modal-btn" data-modal-target="#modal-partner">стать партнёром</button>
       </div>
     </section>
-
   </main>
   @@include('include/footer.html')
   <div class="overlay"></div>
 
   <!-- попап покупки билетов -->
-  <div class="modal-ticket js-modal-block" id="modal-ticket">
-    <div class="modal-ticket__succes"></div>
+  <div class="modal-ticket js-modal-block js-modal-ticket" id="modal-ticket">
+    <div class="modal-ticket__success">
+      <div class="modal-ticket__header">
+        <div class="modal-ticket__title">Успешно!</div>
+        <div class="modal-ticket__subtitle">Сейчас вы будете перенаправлены на оплату</div>
+      </div>
+    </div>
     <div class="modal-ticket__content">
       <div class="modal-ticket__header">
         <div class="modal-ticket__title">купить билет</div>
         <div class="modal-ticket__subtitle">Перед оплатой необходимо оставить свои актуальные контактные данные</div>
       </div>
-      <form class="modal-ticket__form js-modal-ticket" action="/file_name/" method="post" name="modal_ticket"
+      <form class="modal-ticket__form js-modal-ticket-form" action="/file_name/" method="post" name="modal_ticket"
         novalidate="true">
         <div class="modal-ticket__box">
-          <div class="modal-ticket__input-wrap ">
-            <input type="text" class="modal-ticket__input" placeholder="ФИО" name="full-name">
+          <div class="modal-ticket__input-wrap form-group">
+            <input type="text" class="modal-ticket__input form-control" placeholder="ФИО" name="full-name">
           </div>
-          <div class="modal-ticket__input-wrap">
-            <input type="email" class="modal-ticket__input" placeholder="Email*" name="email">
+          <div class="modal-ticket__input-wrap form-group">
+            <input type="email" class="modal-ticket__input form-control" placeholder="Email*" name="email" required
+              data-pristine-required-message="необходимо заполнить поле">
           </div>
-          <div class="modal-ticket__input-wrap">
-            <input type="tel" class="modal-ticket__input" placeholder="+7 (999) 999-99-99*" minlength="18" name="phone">
+          <div class="modal-ticket__input-wrap form-group">
+            <input type="tel" class="modal-ticket__input form-control" placeholder="+7 (999) 999-99-99*" minlength="18"
+              name="phone" required data-pristine-required-message="необходимо заполнить поле">
+          </div>
+          <div class="modal-ticket__input-wrap form-group">
+            <input type="text" class="modal-ticket__input form-control" placeholder="Должность, компания*""
+              name=" phone" required data-pristine-required-message="необходимо заполнить поле">
           </div>
           <div class="modal-ticket__checkbox-wrap form-group">
-            <input type="checkbox" class="modal-ticket__checkbox" id="privacy-policy" name="privacy-policy">
+            <input type="checkbox" class="modal-ticket__checkbox form-control" id="privacy-policy" name="privacy-policy"
+              required data-pristine-required-message="необходимо заполнить поле">
             <label for="privacy-policy">
               <span class="privacy-policy__text">
                 Я согласен на обработку персональных данных и ознакомился с
@@ -657,7 +730,236 @@
             </label>
           </div>
         </div>
-        <button class="modal-ticket__btn" type="submit">Перейти к оплате</button>
+        <button class="modal-ticket__btn js-form-submit" type="submit">Перейти к оплате</button>
+        <input type="hidden" class="js-select-tickets" name="select_tickets" value="">
+      </form>
+    </div>
+    <button class="modal-ticket__close js-close">
+      <svg class="icon-close">
+        <use href="./assets/svg/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- попап стать партнером -->
+  <div class="modal-partner js-modal-block js-modal-partner" id="modal-partner">
+    <div class="modal-partner__success">
+      <div class="modal-partner__header">
+        <div class="modal-partner__title">Успешно!</div>
+        <div class="modal-partner__subtitle">Благодарим за заявку. Мы свяжемся с вами в ближайшее время</div>
+      </div>
+    </div>
+    <div class="modal-partner__content">
+      <div class="modal-partner__header">
+        <div class="modal-partner__title">Стать партнёром</div>
+      </div>
+      <form class="modal-partner__form js-modal-partner-form" action="/file_name/" method="post" name="modal_partner"
+        novalidate="true">
+        <div class="modal-partner__box">
+
+          <div class="modal-partner__input-wrap form-group">
+            <input type="text" class="modal-partner__input form-control" placeholder="ФИО*" name="full-name" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-partner__input-wrap form-group">
+            <input type="text" class="modal-partner__input form-control" placeholder="Компания" name="company">
+          </div>
+
+          <div class="modal-partner__input-wrap form-group js-sort-box">
+            <input type="text" class="modal-partner__input selecting-item js-sort-btn form-control"
+              placeholder="Тип партнёрства*" readonly="" required="" name="selected-item"
+              data-pristine-required-message="необходимо заполнить поле">
+            <svg class="chevron-up">
+              <use href="./assets/svg/sprite.svg#chevron-up"></use>
+            </svg>
+            <ul class="modal-partner__list js-sort-list">
+              <li class="modal-partner__item js-sort-item">Информационный партнёр</li>
+              <li class="modal-partner__item js-sort-item">Технический партнёр</li>
+              <li class="modal-partner__item js-sort-item">Финансовый партнёр</li>
+              <li class="modal-partner__item js-sort-item">СМИ</li>
+            </ul>
+          </div>
+
+          <div class="modal-partner__input-wrap form-group">
+            <input type="email" class="modal-partner__input form-control" placeholder="Email" name="email">
+          </div>
+
+          <div class="modal-partner__input-wrap form-group">
+            <input type="tel" class="modal-partner__input form-control" placeholder="+7 (999) 999-99-99*" minlength="18"
+              name="phone" required data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-partner__checkbox-wrap form-group">
+            <input type="checkbox" class="modal-partner__checkbox form-control" id="privacy-policy2"
+              name="privacy-policy" required data-pristine-required-message="необходимо заполнить поле">
+            <label for="privacy-policy2">
+              <span class="privacy-policy__text">
+                Я согласен на обработку персональных данных и ознакомился с
+                <a href="javascript:void(0);" class="privacy-policy__link" target="_blank">
+                  политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+
+        </div>
+        <button class="modal-partner__btn js-form-submit" type="submit">оставить заявку</button>
+      </form>
+    </div>
+    <button class="modal-ticket__close js-close">
+      <svg class="icon-close">
+        <use href="./assets/svg/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- попап стать спикером -->
+  <div class="modal-speaker js-modal-block js-modal-speaker" id="modal-speaker">
+    <div class="modal-speaker__success">
+      <div class="modal-speaker__header">
+        <div class="modal-speaker__title">Успешно!</div>
+        <div class="modal-speaker__subtitle">Благодарим за заявку. Мы свяжемся с вами в ближайшее время</div>
+      </div>
+    </div>
+    <div class="modal-speaker__content">
+      <div class="modal-speaker__header">
+        <div class="modal-speaker__title">Стать спикером</div>
+      </div>
+      <form class="modal-speaker__form js-modal-speaker-form" action="/file_name/" method="post" name="modal_speaker"
+        novalidate="true">
+        <div class="modal-speaker__box">
+
+          <div class="modal-speaker__input-wrap form-group">
+            <input type="text" class="modal-speaker__input form-control" placeholder="ФИО*" name="full-name" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-speaker__input-wrap form-group">
+            <input type="text" class="modal-speaker__input form-control" placeholder="Компания" name="company">
+          </div>
+
+          <div class="modal-speaker__input-wrap form-group js-sort-box">
+            <input type="text" class="modal-speaker__input selecting-item js-sort-btn form-control"
+              placeholder="Направление деятельности*" readonly="" required="" name="selected-item"
+              data-pristine-required-message="необходимо заполнить поле">
+            <svg class="chevron-up">
+              <use href="./assets/svg/sprite.svg#chevron-up"></use>
+            </svg>
+            <ul class="modal-speaker__list js-sort-list">
+              <li class="modal-speaker__item js-sort-item">seo</li>
+              <li class="modal-speaker__item js-sort-item">smm</li>
+              <li class="modal-speaker__item js-sort-item">дизайн</li>
+              <li class="modal-speaker__item js-sort-item">креатив</li>
+              <li class="modal-speaker__item js-sort-item">influence marketing</li>
+              <li class="modal-speaker__item js-sort-item">продажи</li>
+              <li class="modal-speaker__item js-sort-item">управление проектами</li>
+              <li class="modal-speaker__item js-sort-item">реклама</li>
+              <li class="modal-speaker__item js-sort-item">другое</li>
+            </ul>
+          </div>
+
+          <div class="modal-speaker__input-wrap form-group">
+            <input type="email" class="modal-speaker__input form-control" placeholder="Email" name="email">
+          </div>
+
+          <div class="modal-speaker__input-wrap form-group">
+            <input type="tel" class="modal-speaker__input form-control" placeholder="+7 (999) 999-99-99*" minlength="18"
+              name="phone" required data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-speaker__checkbox-wrap form-group">
+            <input type="checkbox" class="modal-speaker__checkbox form-control" id="privacy-policy3"
+              name="privacy-policy" required data-pristine-required-message="необходимо заполнить поле">
+            <label for="privacy-policy3">
+              <span class="privacy-policy__text">
+                Я согласен на обработку персональных данных и ознакомился с
+                <a href="javascript:void(0);" class="privacy-policy__link" target="_blank">
+                  политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+
+        </div>
+        <button class="modal-speaker__btn js-form-submit" type="submit">оставить заявку</button>
+      </form>
+    </div>
+    <button class="modal-ticket__close js-close">
+      <svg class="icon-close">
+        <use href="./assets/svg/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- попап премия -->
+  <div class="modal-bonus js-modal-block js-modal-bonus" id="modal-bonus">
+    <div class="modal-bonus__success">
+      <div class="modal-bonus__header">
+        <div class="modal-bonus__title">Успешно!</div>
+        <div class="modal-bonus__subtitle">Благодарим за заявку. Мы свяжемся с вами в ближайшее время</div>
+      </div>
+    </div>
+    <div class="modal-bonus__content">
+      <div class="modal-bonus__header">
+        <div class="modal-bonus__title">Заявка на участие</div>
+      </div>
+      <form class="modal-bonus__form js-modal-bonus-form" action="/file_name/" method="post" name="modal_bonus"
+        novalidate="true">
+        <div class="modal-bonus__box">
+
+          <div class="modal-bonus__input-wrap form-group js-sort-box">
+            <input type="text" class="modal-bonus__input selecting-item js-sort-btn form-control"
+              placeholder="Номинация*" readonly="" required="" name="selected-item"
+              data-pristine-required-message="необходимо заполнить поле">
+            <svg class="chevron-up">
+              <use href="./assets/svg/sprite.svg#chevron-up"></use>
+            </svg>
+            <ul class="modal-bonus__list js-sort-list">
+              <li class="modal-bonus__item js-sort-item">прорыв года</li>
+              <li class="modal-bonus__item js-sort-item">дизайн года</li>
+              <li class="modal-bonus__item js-sort-item">сайт года</li>
+              <li class="modal-bonus__item js-sort-item">seo-кейс года</li>
+              <li class="modal-bonus__item js-sort-item">smm-кейс года</li>
+            </ul>
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="text" class="modal-bonus__input form-control" placeholder="Компания" name="company">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="text" class="modal-bonus__input form-control" placeholder="Регион*" name="region" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="text" class="modal-bonus__input form-control" placeholder="Контактное лицо (ФИО)"
+              name="full-name">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="email" class="modal-bonus__input form-control" placeholder="Еmail*" name="email" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="tel" class="modal-bonus__input form-control" placeholder="+7 (999) 999-99-99*" minlength="18"
+              name="phone" required data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__checkbox-wrap form-group">
+            <input type="checkbox" class="modal-bonus__checkbox form-control" id="privacy-policy4" name="privacy-policy"
+              required data-pristine-required-message="необходимо заполнить поле">
+            <label for="privacy-policy4">
+              <span class="privacy-policy__text">
+                Я согласен на обработку персональных данных и ознакомился с
+                <a href="javascript:void(0);" class="privacy-policy__link" target="_blank">
+                  политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+
+        </div>
+        <button class="modal-bonus__btn js-form-submit" type="submit">оставить заявку</button>
       </form>
     </div>
     <button class="modal-ticket__close js-close">
