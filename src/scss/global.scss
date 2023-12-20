@@ -255,3 +255,89 @@ body::-webkit-scrollbar-thumb {
     display: block;
   }
 }
+
+@media screen and (max-width: 1349px) {
+  .footer {
+    &__content {
+      left: 20px;
+    }
+
+    &__map {
+      width: 418px;
+      height: 694px;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .footer {
+    &__content {
+      height: 555px;
+      max-width: 728px;
+      left: 0;
+    }
+
+    &__map {
+      width: 341px;
+      height: 555px;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__social {
+      column-gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    &__adress {
+      width: 354px;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &__phone {
+      a {
+        font-size: 16px;
+      }
+    }
+
+    &__mail {
+      margin-top: 20px;
+
+      a {
+        font-size: 16px;
+      }
+    }
+
+    &__legal {
+      margin: 80px 0 40px;
+
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__copyright {
+      column-gap: 30px;
+
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__line {
+      height: 3px;
+    }
+  }
+}
