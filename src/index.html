@@ -69,7 +69,11 @@
       </div>
       <div class="promo-img-outer">
         <div class="promo-img animate__animated animate__fadeIn">
-          <img src="./assets/img/global/header-index.png" alt="header-index">
+          <picture>
+            <source media="(min-width: 480px)" srcset="./assets/img/global/header-index.png">
+            <source media="(max-width: 479px)" srcset="./assets/img/global/header-index-mob.png">
+            <img src="./assets/img/global/header-index.png" alt="header-index">
+          </picture>
         </div>
       </div>
     </section>
@@ -435,9 +439,9 @@
           </div>
         </div>
         <div class="bonus-content">
-          <div class="bonus-item" data-name="прорыв года">
-            <h3 class="bonus-item__title page__title-h3">прорыв года</h3>
-            <div class="bonus-item__box">
+          <div class="bonus-item js-item _desc" data-name="прорыв года">
+            <h3 class="bonus-item__title page__title-h3 js-title">прорыв года</h3>
+            <div class="bonus-item__box js-desc active">
               <div class="bonus-item__info">
                 <p class="bonus-item__text">
                   Номинация для молодых агентств до 5 лет (с момент регистрации юр. лица) и штатом до 15 человек.
@@ -450,9 +454,9 @@
               </div>
             </div>
           </div>
-          <div class="bonus-item" data-name="дизайн года">
-            <h3 class="bonus-item__title page__title-h3">дизайн года</h3>
-            <div class="bonus-item__box">
+          <div class="bonus-item js-item _desc" data-name="дизайн года">
+            <h3 class="bonus-item__title page__title-h3 js-title">дизайн года</h3>
+            <div class="bonus-item__box js-desc">
               <div class="bonus-item__info">
                 <p class="bonus-item__text">
                   В этой номинации мы ждём от вас кейсы по дизайну сайтов, сервисов или социальных сетей. Если проект
@@ -466,9 +470,9 @@
               </div>
             </div>
           </div>
-          <div class="bonus-item" data-name="сайт года">
-            <h3 class="bonus-item__title page__title-h3">сайт года</h3>
-            <div class="bonus-item__box">
+          <div class="bonus-item js-item _desc" data-name="сайт года">
+            <h3 class="bonus-item__title page__title-h3 js-title">сайт года</h3>
+            <div class="bonus-item__box js-desc">
               <div class="bonus-item__info">
                 <p class="bonus-item__text">
                   За прошедший 2022 год запустили интересный сайт? Присылайте! Поделитесь, какая была задача, какие
@@ -481,9 +485,9 @@
               </div>
             </div>
           </div>
-          <div class="bonus-item" data-name="seo-кейс года">
-            <h3 class="bonus-item__title page__title-h3">seo-кейс года</h3>
-            <div class="bonus-item__box">
+          <div class="bonus-item js-item _desc" data-name="seo-кейс года">
+            <h3 class="bonus-item__title page__title-h3 js-title">seo-кейс года</h3>
+            <div class="bonus-item__box js-desc">
               <div class="bonus-item__info">
                 <p class="bonus-item__text">
                   Номинация для компаний, которые собрали самое полное семантическое ядро, увеличил конверсии в тысячу
@@ -496,9 +500,9 @@
               </div>
             </div>
           </div>
-          <div class="bonus-item" data-name="smm-кейс года">
-            <h3 class="bonus-item__title page__title-h3">smm-кейс года</h3>
-            <div class="bonus-item__box">
+          <div class="bonus-item js-item _desc" data-name="smm-кейс года">
+            <h3 class="bonus-item__title page__title-h3 js-title">smm-кейс года</h3>
+            <div class="bonus-item__box js-desc">
               <div class="bonus-item__info">
                 <p class="bonus-item__text">
                   Данная номинация для тех, кто классно оформляет и ведёт аккаунты, пишет интересные посты, снимает
@@ -686,7 +690,7 @@
       </div>
     </section>
   </main>
-  @@include('include/footer.html')
+  <!-- @@include('include/footer.html') -->
   <div class="overlay"></div>
 
   <!-- попап покупки билетов -->

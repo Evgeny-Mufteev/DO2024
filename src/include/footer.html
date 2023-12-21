@@ -36,7 +36,11 @@
     </div>
   </div>
   <div class="footer__map">
-    <img src="./assets/img/global/map.png" alt="">
+    <picture>
+      <source media="(min-width: 481px)" srcset="./assets/img/global/map.png">
+      <source media="(max-width: 767px)" srcset="./assets/img/global/map-mob.png">
+      <img src="./assets/img/global/map.png" alt="header-index">
+    </picture>
   </div>
   <div class="footer__line"></div>
 </footer>

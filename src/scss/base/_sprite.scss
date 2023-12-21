@@ -23,3 +23,19 @@
   height: 18px;
   fill: #828282;
 }
+
+@media screen and (max-width: 767px) {
+  .social-item {
+    fill: #fff;
+
+    &._tg {
+      width: 21px;
+      height: 17px;
+    }
+
+    &._vk {
+      width: 23px;
+      height: 14px;
+    }
+  }
+}

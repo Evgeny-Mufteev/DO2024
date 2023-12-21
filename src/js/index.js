@@ -290,4 +290,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bonusItemsContainer = document.querySelector('.bonus-content');
   bonusItemsContainer.addEventListener('click', setNominationToModal);
+
+  // Удаление класса _desc в секции премии
+  const clearDescClassForMobile = () => {
+    if (window.innerWidth < 768) {
+      const biba = document.querySelectorAll('._desc');
+      biba.forEach((el) => {
+        el.classList.remove('_desc');
+      });
+    }
+  };
+  clearDescClassForMobile();
+
+  // Аккардеоны
+  const handleInfoHideShowBlock = (el) => {
+    el = el.target;
+
+    if (el.closest('.js-title') && !el.closest('.js-title.active')) {
+      document.querySelectorAll('.js-title').forEach((el) => {
+        el.classList.remove('active');
+        let scrollHeight = el.closest('.js-item');
+        let descElement = scrollHeight.querySelector('.js-desc');
+        descElement.style.maxHeight = null;
+        descElement.classList.remove('active');
+      });
+
+      let scrollHeight = el.closest('.js-item');
+      el.closest('.js-title').classList.add('active');
+      let descElement = scrollHeight.querySelector('.js-desc');
+      descElement.style.maxHeight = descElement.scrollHeight + 'px';
+      descElement.classList.add('active');
+    } else if (el.closest('.js-title') && !el.closest('.js-desc')) {
+      el.closest('.js-title').classList.remove('active');
+      let scrollHeight = el.closest('.js-item');
+      let descElement = scrollHeight.querySelector('.js-desc');
+      descElement.classList.remove('active');
+      descElement.style.maxHeight = null;
+    }
+  };
+
+  if (window.innerWidth < 768) {
+    document.addEventListener('click', handleInfoHideShowBlock);
+  }
 });
