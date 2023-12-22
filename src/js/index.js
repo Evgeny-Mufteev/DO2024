@@ -332,4 +332,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth < 768) {
     document.addEventListener('click', handleInfoHideShowBlock);
   }
+
+  // Навигация по странице
+  const handlePageNavigation = () => {
+    const anchors = document.querySelectorAll('.js-scroll-to');
+
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        const blockID = anchor.getAttribute('href').substring(1);
+        document.getElementById(blockID)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    });
+  };
+  handlePageNavigation();
 });

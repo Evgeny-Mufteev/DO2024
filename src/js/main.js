@@ -18,4 +18,55 @@ document.addEventListener('DOMContentLoaded', () => {
     number.addEventListener('focus', handlePhoneMask.bind(null, number));
     number.addEventListener('blur', handlePhoneMask.bind(null, number));
   });
+
+  // Плавный скролл
+  if (window.screen.width >= 767) {
+    SmoothScroll({
+      animationTime: 800, // Уменьшить время анимации
+      stepSize: 80, // Немного увеличить размер шага
+
+      // Дополнительные настройки:
+      accelerationDelta: 40, // Уменьшить ускорение
+      accelerationMax: 2, // Уменьшить максимальное ускорение
+      keyboardSupport: true, // Поддержка клавиатуры
+      arrowScroll: 50, // Шаг скролла стрелками на клавиатуре в пикселях
+
+      // Pulse (less tweakable)
+      // ratio of "tail" to "acceleration"
+      pulseAlgorithm: true,
+      pulseScale: 3,
+      pulseNormalize: 1,
+      touchpadSupport: true, // Поддержка тачпада
+    });
+  }
+
+  // Якорь наверх
+  const handleScrollUp = () => {
+    const button = document.querySelector('.toTop');
+    const header = document.querySelector('.header');
+
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      header?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    });
+  };
+  handleScrollUp();
+
+  // Появление кнопки якоря
+  const showScroll = () => {
+    window.addEventListener('scroll', () => {
+      const topArrow = document.querySelector('.toTop');
+
+      if (window.pageYOffset > 1200) {
+        topArrow.classList.add('_show');
+      } else {
+        topArrow.classList.remove('_show');
+      }
+    });
+  };
+  showScroll();
 });

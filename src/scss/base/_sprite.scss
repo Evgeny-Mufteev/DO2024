@@ -24,6 +24,12 @@
   fill: #828282;
 }
 
+.arrow-up {
+  fill: #C0235C;
+  width: 14px;
+  height: 17px;
+}
+
 @media screen and (max-width: 767px) {
   .social-item {
     fill: #fff;
@@ -38,4 +44,15 @@
       height: 14px;
     }
   }
+
+  .arrow-up {
+    width: 8px;
+    height: 9px;
+  }
+
+  .icon-close {
+    width: 20px;
+    height: 22px;
+  }
+
 }
