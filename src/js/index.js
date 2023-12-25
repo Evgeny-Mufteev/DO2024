@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Таймер до повышения цены
-  var warrior;
+  let warrior;
   const calculationsTimer = (endToTime, wrap) => {
     const dateEnd = new Date(endToTime),
       dateNow = new Date(),
@@ -66,40 +66,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Горизонтальный скролл в галериеи
   const horizontalScrollInGallery = () => {
-    const controller = new ScrollMagic.Controller();
-    const slider = document.querySelector('.gallery__slider');
-    const horizontalScrollLength = slider.scrollWidth - window.innerWidth;
-    const triggerHookValue = 170 / window.innerHeight;
-    const wipeAnimation = gsap
-      .timeline()
-      .fromTo(slider, { x: 0 }, { x: -horizontalScrollLength, ease: 'none' });
-    new ScrollMagic.Scene({
-      triggerElement: '.gallery',
-      duration: horizontalScrollLength,
-      triggerHook: triggerHookValue,
-    })
-      .setPin('.gallery')
-      .setTween(wipeAnimation)
-      .addTo(controller);
+    if (document.querySelector('.gallery__slider')) {
+      const controller = new ScrollMagic.Controller();
+      const slider = document.querySelector('.gallery__slider');
+      const horizontalScrollLength = slider.scrollWidth - window.innerWidth;
+      const triggerHookValue = 170 / window.innerHeight;
+      const wipeAnimation = gsap
+        .timeline()
+        .fromTo(slider, { x: 0 }, { x: -horizontalScrollLength, ease: 'none' });
+      new ScrollMagic.Scene({
+        triggerElement: '.gallery',
+        duration: horizontalScrollLength,
+        triggerHook: triggerHookValue,
+      })
+        .setPin('.gallery')
+        .setTween(wipeAnimation)
+        .addTo(controller);
+    }
   };
   horizontalScrollInGallery();
 
   // Функция для управления анимацией
   const manageAnimation = (tickerElement, state) => {
+    if (!tickerElement) return;
+
     const lists = tickerElement.querySelectorAll('.partners__list');
-    lists.forEach((list) => (list.style.animationPlayState = state));
+    lists.forEach((list) => {
+      if (list) list.style.animationPlayState = state;
+    });
   };
 
   // Функция для настройки тикера
   const setupTicker = (ticker, direction) => {
-    const originalList = ticker.querySelector('.partners__list'),
-      clone = originalList.cloneNode(true);
+    if (!ticker) return;
+
+    const originalList = ticker.querySelector('.partners__list');
+    if (!originalList) return;
+
+    const clone = originalList.cloneNode(true);
 
     if (direction === '_left') {
       ticker.appendChild(clone);
     } else {
       ticker.insertBefore(clone, originalList);
     }
+
     // Обработчики событий для остановки и запуска анимации
     ticker.addEventListener('mouseover', () => manageAnimation(ticker, 'paused'));
     ticker.addEventListener('mouseout', () => manageAnimation(ticker, 'running'));
@@ -107,11 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Функция для инициализации всех тикеров
   const setupTickers = () => {
-    document.querySelectorAll('.partners-content').forEach((ticker) => {
+    const tickers = document.querySelectorAll('.partners-content');
+    if (!tickers) return;
+
+    tickers.forEach((ticker) => {
       const direction = ticker.classList.contains('_left') ? '_left' : '_right';
       setupTicker(ticker, direction);
     });
   };
+
   setupTickers();
 
   // работа модальных окон
@@ -228,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
   blockForm.addEventListener('click', sendIdToForm);
 
   // Выбор пунктов партнерства в форме
-  if (document.querySelector('.js-sort-box')) {
-    const handleParameterSelection = (el) => {
+  const handleParameterSelection = (el) => {
+    if (document.querySelector('.js-sort-box')) {
       el = el.target;
 
       // Открытие списка
@@ -264,9 +279,9 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.classList.remove('active');
         });
       }
-    };
-    document.addEventListener('click', handleParameterSelection);
-  }
+    }
+  };
+  document.addEventListener('click', handleParameterSelection);
 
   // Передать выбранной премии в форму
   const setNominationToModal = (el) => {

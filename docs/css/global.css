@@ -191,7 +191,7 @@ picture source {
 }
 
 .social-item {
-  fill: #fff;
+  fill: var(--white-color);
 }
 
 .social-item._tg {
@@ -212,7 +212,13 @@ picture source {
 .chevron-up {
   width: 18px;
   height: 18px;
-  fill: #828282;
+  fill: var(--gray-color);
+}
+
+.arrow-up {
+  fill: var(--red-color);
+  width: 14px;
+  height: 17px;
 }
 
 :root {
@@ -324,7 +330,7 @@ picture source {
   width: 46px;
   height: 46px;
   border-radius: 4px;
-  background: #C0235C;
+  background: var(--red-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,7 +345,7 @@ picture source {
 }
 
 .footer__social-item:hover {
-  background: #9F0E42;
+  background: var(--red-hover-color);
 }
 
 .footer__adress {
@@ -348,7 +354,7 @@ picture source {
 }
 
 .footer__adress p {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -368,7 +374,7 @@ picture source {
 }
 
 .footer__phone a {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -381,7 +387,7 @@ picture source {
 }
 
 .footer__mail a {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -402,7 +408,7 @@ picture source {
 }
 
 .footer__legal a {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
@@ -420,7 +426,7 @@ picture source {
 }
 
 .footer__copyright a {
-  color: #403E3F;
+  color: var(--main-color);
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
@@ -458,7 +464,7 @@ picture source {
 
 .footer__line {
   height: 14px;
-  background: #C0235C;
+  background: var(--red-color);
 }
 
 body::-webkit-scrollbar {
@@ -466,7 +472,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--white-color);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -490,6 +496,37 @@ body::-webkit-scrollbar-thumb {
 
 .overlay.active {
   display: block;
+}
+
+.toTop {
+  width: 36px;
+  height: 64px;
+  background: var(--light-pink-color2);
+  border-radius: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding-top: 12px;
+  cursor: pointer;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  bottom: 50px;
+  right: 50px;
+  -webkit-transition: var(--base-transition);
+  transition: var(--base-transition);
+  z-index: 18;
+}
+
+.toTop._show {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 1349px) {
@@ -626,7 +663,7 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 767px) {
   .social-item {
-    fill: #fff;
+    fill: var(--white-color);
   }
 
   .social-item._tg {
@@ -637,6 +674,16 @@ body::-webkit-scrollbar-thumb {
   .social-item._vk {
     width: 23px;
     height: 14px;
+  }
+
+  .arrow-up {
+    width: 8px;
+    height: 9px;
+  }
+
+  .icon-close {
+    width: 20px;
+    height: 22px;
   }
 
   .page__title-h2 {
@@ -723,6 +770,18 @@ body::-webkit-scrollbar-thumb {
   .footer__line {
     height: 8px;
   }
+
+  .toTop {
+    width: 20px;
+    height: 34px;
+    padding-top: 8px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .no-scroll {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 479px) {
@@ -787,5 +846,13 @@ body::-webkit-scrollbar-thumb {
 
   .footer__copyright a {
     font-size: 11px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 14px;
   }
 }

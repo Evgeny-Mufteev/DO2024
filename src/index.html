@@ -14,41 +14,54 @@
 
 <body>
   <div class="wrapper" id="my-scrollbar">
-    <header class="header header-index">
+    <header class="header header-index animate__animated animate__fadeIn">
       <div class="container">
-        <div class="header-content">
-          <ul class="header__list">
-            <li class="header__item">
-              <a class="header__link js-scroll-to" href="#tickets">
-                <div class="header__line" data-text="билеты">билеты</div>
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="javascript:void(0);">
-                <div class="header__line" data-text="спикеры">спикеры</div>
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link js-scroll-to" href="#organizers">
-                <div class="header__line" data-text="о конференции">о конференции</div>
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="javascript:void(0);">
-                <div class="header__line" data-text="премия">премия</div>
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="javascript:void(0);">
-                <div class="header__line" data-text="программа">программа</div>
-              </a>
-            </li>
-          </ul>
+        <div class="header__inner">
+          <div class="header__box">
+            <a class="header-logo" href="index.html">
+              <img src="./assets/img/global/logo.svg" alt="logo">
+            </a>
+            <div class="header__menu-wrap">
+              <button class="header__menu">
+                <span></span>
+              </button>
+            </div>
+          </div>
+          <div class="header-content">
+            <ul class="header__list">
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="#tickets">
+                  <div class="header__line" data-text="билеты">билеты</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="speakers.html">
+                  <div class="header__line" data-text="спикеры">спикеры</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="#organizers">
+                  <div class="header__line" data-text="о конференции">о конференции</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="javascript:void(0);">
+                  <div class="header__line" data-text="премия">премия</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="javascript:void(0);">
+                  <div class="header__line" data-text="программа">программа</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </header>
     <main class="main">
-      <section class="promo">
+      <section class="promo animate__animated animate__fadeIn">
         <div class="promo__content">
           <div class="promo-info">
             <h1 class="promo-info__title">
@@ -341,7 +354,7 @@
           <div class="speakers__btns">
             <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker">Хочу стать
               спикером</button>
-            <a class="speakers__btn _white" href="javascript:void(0);">смотреть всех спикеров</a>
+            <a class="speakers__btn _white" href="speakers.html">смотреть всех спикеров</a>
           </div>
         </div>
       </section>
@@ -892,7 +905,7 @@
         <button class="modal-speaker__btn js-form-submit" type="submit">оставить заявку</button>
       </form>
     </div>
-    <button class="modal-ticket__close js-close">
+    <button class="modal-speaker__close js-close">
       <svg class="icon-close">
         <use href="./assets/svg/sprite.svg#icon-close"></use>
       </svg>
@@ -974,7 +987,7 @@
     </button>
   </div>
 
-  <!-- якрорь наверх -->
+  <!-- якорь наверх -->
   <div class="toTop">
     <svg class="arrow-up">
       <use href="./assets/svg/sprite.svg#arrow-up"></use>

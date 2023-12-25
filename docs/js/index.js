@@ -65,41 +65,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Горизонтальный скролл в галериеи
   var horizontalScrollInGallery = function horizontalScrollInGallery() {
-    var controller = new ScrollMagic.Controller();
-    var slider = document.querySelector('.gallery__slider');
-    var horizontalScrollLength = slider.scrollWidth - window.innerWidth;
-    var triggerHookValue = 170 / window.innerHeight;
-    var wipeAnimation = gsap.timeline().fromTo(slider, {
-      x: 0
-    }, {
-      x: -horizontalScrollLength,
-      ease: 'none'
-    });
-    new ScrollMagic.Scene({
-      triggerElement: '.gallery',
-      duration: horizontalScrollLength,
-      triggerHook: triggerHookValue
-    }).setPin('.gallery').setTween(wipeAnimation).addTo(controller);
+    if (document.querySelector('.gallery__slider')) {
+      var controller = new ScrollMagic.Controller();
+      var slider = document.querySelector('.gallery__slider');
+      var horizontalScrollLength = slider.scrollWidth - window.innerWidth;
+      var triggerHookValue = 170 / window.innerHeight;
+      var wipeAnimation = gsap.timeline().fromTo(slider, {
+        x: 0
+      }, {
+        x: -horizontalScrollLength,
+        ease: 'none'
+      });
+      new ScrollMagic.Scene({
+        triggerElement: '.gallery',
+        duration: horizontalScrollLength,
+        triggerHook: triggerHookValue
+      }).setPin('.gallery').setTween(wipeAnimation).addTo(controller);
+    }
   };
   horizontalScrollInGallery();
 
   // Функция для управления анимацией
   var manageAnimation = function manageAnimation(tickerElement, state) {
+    if (!tickerElement) return;
     var lists = tickerElement.querySelectorAll('.partners__list');
     lists.forEach(function (list) {
-      return list.style.animationPlayState = state;
+      if (list) list.style.animationPlayState = state;
     });
   };
 
   // Функция для настройки тикера
   var setupTicker = function setupTicker(ticker, direction) {
-    var originalList = ticker.querySelector('.partners__list'),
-      clone = originalList.cloneNode(true);
+    if (!ticker) return;
+    var originalList = ticker.querySelector('.partners__list');
+    if (!originalList) return;
+    var clone = originalList.cloneNode(true);
     if (direction === '_left') {
       ticker.appendChild(clone);
     } else {
       ticker.insertBefore(clone, originalList);
     }
+
     // Обработчики событий для остановки и запуска анимации
     ticker.addEventListener('mouseover', function () {
       return manageAnimation(ticker, 'paused');
@@ -111,7 +117,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Функция для инициализации всех тикеров
   var setupTickers = function setupTickers() {
-    document.querySelectorAll('.partners-content').forEach(function (ticker) {
+    var tickers = document.querySelectorAll('.partners-content');
+    if (!tickers) return;
+    tickers.forEach(function (ticker) {
       var direction = ticker.classList.contains('_left') ? '_left' : '_right';
       setupTicker(ticker, direction);
     });
@@ -223,8 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
   blockForm.addEventListener('click', sendIdToForm);
 
   // Выбор пунктов партнерства в форме
-  if (document.querySelector('.js-sort-box')) {
-    var handleParameterSelection = function handleParameterSelection(el) {
+  var handleParameterSelection = function handleParameterSelection(el) {
+    if (document.querySelector('.js-sort-box')) {
       el = el.target;
 
       // Открытие списка
@@ -259,9 +267,9 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.classList.remove('active');
         });
       }
-    };
-    document.addEventListener('click', handleParameterSelection);
-  }
+    }
+  };
+  document.addEventListener('click', handleParameterSelection);
 
   // Передать выбранной премии в форму
   var setNominationToModal = function setNominationToModal(el) {
@@ -322,4 +330,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.innerWidth < 768) {
     document.addEventListener('click', handleInfoHideShowBlock);
   }
+
+  // Навигация по странице
+  var handlePageNavigation = function handlePageNavigation() {
+    var anchors = document.querySelectorAll('.js-scroll-to');
+    anchors.forEach(function (anchor) {
+      anchor.addEventListener('click', function (evt) {
+        var _document$getElementB;
+        evt.preventDefault();
+        var blockID = anchor.getAttribute('href').substring(1);
+        (_document$getElementB = document.getElementById(blockID)) === null || _document$getElementB === void 0 || _document$getElementB.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  };
+  handlePageNavigation();
 });
