@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  @@include('include/head.html', {
+  "title": "speakers page"
+  })
+
+  <link href="./assets/plugins/animate/animate.min.css" rel="stylesheet">
+  <link href="./css/global.css" rel="stylesheet">
+  <link href="./css/program.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper" id="my-scrollbar">
+    <header class="header header-page animate__animated animate__fadeIn animate__slow">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__box">
+            <a class="header-logo" href="index.html">
+              <img src="./assets/img/global/logo.svg" alt="Логотип Digital Оттепель">
+            </a>
+            <div class="header__menu-wrap">
+              <button class="header__menu" aria-label="Открыть меню">
+                <span></span>
+              </button>
+            </div>
+          </div>
+          <div class="header-content">
+            <ul class="header__list">
+              <!-- Уточнение ссылок и их назначения -->
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="index.html#tickets">
+                  <div class="header__line" data-text="билеты">билеты</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="#speakers">
+                  <div class="header__line" data-text="спикеры">спикеры</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="index.html#organizers">
+                  <div class="header__line" data-text="о конференции">о конференции</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="javascript:void(0);">
+                  <div class="header__line" data-text="премия">премия</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="program.html">
+                  <div class="header__line active" data-text="программа">программа</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="program" id="program">
+        <div class="container">
+          <div class="program-header animate__animated animate__fadeIn animate__slower">
+            <div class="program-header-inner animate__animated animate__fadeInRight animate__slower">
+              <h1 class="program-header__title" aria-label="Программа конференции">программа конференции</h1>
+              <p class="program-header__info">
+                Сформировали программу так, чтобы в каждой секции каждый из участников конференции смог найти что-то
+                интересное для себя и своей работы
+              </p>
+              <button class="program-header__btn" type="button" aria-label="Скачать программу конференции">скачать
+                пограмму</button>
+            </div>
+          </div>
+
+          <div class="program-content tabs">
+            <div class="program-content__btns tabs__btns">
+              <button class="program-content__btn is-active tabs__btn" type="button">4 апреля</button>
+              <button class="program-content__btn tabs__btn" type="button">5 апреля</button>
+            </div>
+            <div class="program-content__items tabs__items">
+              <div class="program-content__item is-active tabs__item">
+                <div class="program-block  program-block_red">
+                  <h3 class="program-block__title" aria-label="Зал Pink, Лекторий 2">ЗАЛ pink — ЛЕКТОРИЙ2</h3>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Открытие конференции с 10:10 до 10:30">
+                      <time datetime="10:10">10:10</time>-<time datetime="10:30">10:30</time> открытие конференции
+                    </p>
+                    <p class="program-block__section">Секция: <br> work hard</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Кофе-брейк с 12:00 до 12:30">
+                      <time datetime="12:00">12:00</time>-<time datetime="12:30">12:30</time> КОФЕ-БРЕЙК
+                    </p>
+                    <p class="program-block__section">Секция: <br> work hard</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="program-block program-block_black">
+                  <h3 class="program-block__title" aria-label="Зал Black, Воркшопы 2">ЗАЛ black — воркшопы2</h3>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Открытие конференции с 10:10 до 10:30">
+                      <time datetime="10:10">10:10</time>-<time datetime="10:30">10:30</time> открытие конференции
+                    </p>
+                    <p class="program-block__section">не будет</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 12:00">
+                      <time datetime="10:15">10:15</time>-<time datetime="12:00">12:00</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Кофе-брейк с 12:00 до 12:30">
+                      <time datetime="12:00">12:00</time>-<time datetime="12:30">12:30</time> КОФЕ-БРЕЙК
+                    </p>
+                    <p class="program-block__section">не будет</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 12:00">
+                      <time datetime="10:15">10:15</time>-<time datetime="12:00">12:00</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="program-content__item tabs__item">
+                <div class="program-block  program-block_red">
+                  <h3 class="program-block__title" aria-label="Зал Pink, Лекторий 2">ЗАЛ pink — ЛЕКТОРИЙ2</h3>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Открытие конференции с 10:10 до 10:30">
+                      <time datetime="10:10">10:10</time>-<time datetime="10:30">10:30</time> открытие конференции
+                    </p>
+                    <p class="program-block__section">Секция: <br> work hard</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Кофе-брейк с 12:00 до 12:30">
+                      <time datetime="12:00">12:00</time>-<time datetime="12:30">12:30</time> КОФЕ-БРЕЙК
+                    </p>
+                    <p class="program-block__section">Секция: <br> work hard</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 10:50">
+                      <time datetime="10:15">10:15</time>-<time datetime="10:50">10:50</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="program-block program-block_black">
+                  <h3 class="program-block__title" aria-label="Зал Black, Воркшопы 2">ЗАЛ black — воркшопы2</h3>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Открытие конференции с 10:10 до 10:30">
+                      <time datetime="10:10">10:10</time>-<time datetime="10:30">10:30</time> открытие конференции
+                    </p>
+                    <p class="program-block__section">не будет</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 12:00">
+                      <time datetime="10:15">10:15</time>-<time datetime="12:00">12:00</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="program-block__header">
+                    <p class="program-block__option" aria-label="Кофе-брейк с 12:00 до 12:30">
+                      <time datetime="12:00">12:00</time>-<time datetime="12:30">12:30</time> КОФЕ-БРЕЙК
+                    </p>
+                    <p class="program-block__section">не будет</p>
+                  </div>
+                  <div class="program-block__body">
+                    <div class="program-block__time" aria-label="Сессия с 10:15 до 12:00">
+                      <time datetime="10:15">10:15</time>-<time datetime="12:00">12:00</time>
+                    </div>
+                    <div class="program-block__box">
+                      <p class="program-block__theme">7 кругов ада! Или почему мы любим работать в команде</p>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                      <div class="program-block__author"
+                        aria-label="Докладчик: Дарья Бозакина, CEO SMM-агентства DashDash, город Нижний Новгород">
+                        <p class="program-block__name">Дарья Бозакина</p>
+                        <p class="program-block__desc">CEO SMM-агентства DashDash, г. Нижний Новгород</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('include/footer.html')
+  </div>
+  <div class="overlay"></div>
+
+  <!-- якорь наверх -->
+  <div class="toTop">
+    <svg class="arrow-up">
+      <use href="./assets/svg/sprite.svg#arrow-up"></use>
+    </svg>
+  </div>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=89466487-2874-429c-ba1d-e13fa6a692bb"
+    type="text/javascript"></script>
+  <script src="./assets/plugins/smoothscroll/smoothscroll.min.js"></script>
+  <script src="./assets/plugins/pristine/pristine.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/program.js"></script>
+</body>
+
+</html>

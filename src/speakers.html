@@ -13,15 +13,15 @@
 
 <body>
   <div class="wrapper" id="my-scrollbar">
-    <header class="header header-page animate__animated animate__fadeIn">
+    <header class="header header-page animate__animated animate__fadeIn animate__slow">
       <div class="container">
         <div class="header__inner">
           <div class="header__box">
             <a class="header-logo" href="index.html">
-              <img src="./assets/img/global/logo.svg" alt="logo">
+              <img src="./assets/img/global/logo.svg" alt="Логотип Digital Оттепель">
             </a>
             <div class="header__menu-wrap">
-              <button class="header__menu">
+              <button class="header__menu" aria-label="Открыть меню">
                 <span></span>
               </button>
             </div>
@@ -49,7 +49,7 @@
                 </a>
               </li>
               <li class="header__item">
-                <a class="header__link js-nav-links" href="javascript:void(0);">
+                <a class="header__link js-nav-links" href="program.html">
                   <div class="header__line" data-text="программа">программа</div>
                 </a>
               </li>
@@ -62,17 +62,18 @@
     <main class="main">
       <section class="speakers" id="speakers">
         <div class="container">
-          <div class="speakers__header">
-            <div class="speakers__header-title">спикеры</div>
-            <div class="speakers__header-info">
+          <div class="speakers__header animate__animated animate__fadeIn animate__slower">
+            <h2 class="speakers__header-title animate__slower animate__animated animate__fadeInLeft">спикеры</h2>
+            <div class="speakers__header-info animate__slower animate__animated animate__fadeInRight">
               <p class="speakers__header-text">
                 На Digital-Оттепель выступят топовые спикеры в области маркетинга, рекламы и продвижения, коммуникации,
                 брендов и современных технологий из разных городов России.
               </p>
-              <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker">Хочу стать
-                спикером</button>
+              <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker"
+                aria-label="Хочу стать спикером">Хочу стать спикером</button>
             </div>
           </div>
+
           <div class="speakers__content">
             <div class="speakers-item">
               <div class="speakers-item__img">
@@ -277,6 +278,8 @@
     </svg>
   </div>
 
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=89466487-2874-429c-ba1d-e13fa6a692bb"
+    type="text/javascript"></script>
   <script src="./assets/plugins/smoothscroll/smoothscroll.min.js"></script>
   <script src="./assets/plugins/pristine/pristine.min.js"></script>
   <script src="./js/main.js"></script>

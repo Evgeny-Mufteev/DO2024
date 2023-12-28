@@ -152,6 +152,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
+      transition: var(--base-transition);
+
+      &:hover {
+        color: var(--red-color);
+      }
     }
   }
 
@@ -165,6 +170,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
+      transition: var(--base-transition);
+
+      &:hover {
+        color: var(--red-color);
+      }
     }
   }
 
@@ -181,6 +191,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
+      transition: var(--base-transition);
+
+      &:hover {
+        color: var(--red-color);
+      }
     }
   }
 
@@ -195,6 +210,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
+      transition: var(--base-transition);
+
+      &:hover {
+        color: var(--red-color);
+      }
     }
   }
 
@@ -215,8 +235,16 @@
     width: 740px;
     height: 694px;
 
-    img {
+    .ymaps-2-1-79-inner-panes {
       border-radius: 200px 0px 0px 0px;
+    }
+
+    .ymaps-2-1-79-map {
+      border-radius: 200px 0px 0px 0px;
+    }
+
+    .ymaps-2-1-79-float-button-text {
+      display: none;
     }
   }
 
@@ -282,6 +310,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header {
+  position: relative;
+  z-index: 1;
 
   &-index {
     .header-logo {
@@ -372,8 +402,12 @@ body::-webkit-scrollbar-thumb {
       font-weight: 400;
       line-height: normal;
 
+      &:hover {
+        color: var(--red-color);
+      }
+
       &.active {
-        color: #C0235C;
+        color: var(--red-color);
       }
 
       &:before {
@@ -520,15 +554,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-
-  select:focus,
-  textarea:focus,
-  input:focus {
-    font-size: 14px;
-  }
-}
-
 @media screen and (max-width: 1349px) {
   .footer {
     &__content {
@@ -538,11 +563,6 @@ body::-webkit-scrollbar-thumb {
     &__map {
       width: 418px;
       height: 694px;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
     }
   }
 }
@@ -583,11 +603,6 @@ body::-webkit-scrollbar-thumb {
     &__map {
       width: 341px;
       height: 555px;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     &__social {
@@ -730,11 +745,6 @@ body::-webkit-scrollbar-thumb {
     &__map {
       width: 230px;
       height: 570px;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     &__social {

@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Горизонтальный скролл в галериеи
   const horizontalScrollInGallery = () => {
-    if (document.querySelector('.gallery__slider')) {
+    if (window.innerWidth >= 768 && document.querySelector('.gallery__slider')) {
       const controller = new ScrollMagic.Controller();
       const slider = document.querySelector('.gallery__slider');
       const horizontalScrollLength = slider.scrollWidth - window.innerWidth;
@@ -85,6 +85,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   horizontalScrollInGallery();
+
+  // слайдер в галереии
+  let swiper;
+
+  const initSwiper = () => {
+    swiper = new Swiper('.exposition__slider', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      loop: true,
+    });
+  };
+
+  const checkSwiperInit = () => {
+    if (window.innerWidth < 768) {
+      if (!swiper || swiper.destroyed) {
+        initSwiper();
+      }
+    } else {
+      if (swiper) {
+        swiper.destroy();
+      }
+    }
+  };
+  checkSwiperInit();
+  window.addEventListener('resize', checkSwiperInit);
 
   // Функция для управления анимацией
   const manageAnimation = (tickerElement, state) => {
@@ -183,54 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(error);
       });
   };
-
-  // Валидация формы
-  const handleFormSubmitPage = (formItem, popup) => {
-    const form = document.querySelector(formItem);
-    const modalBlock = document.querySelector(popup);
-
-    if (!form) {
-      return;
-    }
-
-    const btn = form.querySelector('.js-form-submit');
-    const phone = form.querySelector('input[name="phone"]');
-    const pristine = new Pristine(form);
-
-    const handleInputValidation = (inputElement) => {
-      inputElement?.addEventListener('input', () => {
-        const valid = pristine.validate(inputElement);
-        btn.disabled = !valid;
-      });
-    };
-    handleInputValidation(phone);
-
-    form.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      const valid = pristine.validate();
-
-      if (valid) {
-        evt.preventDefault();
-        modalBlock.classList.add('success');
-        const formData = Object.fromEntries(new FormData(evt.target).entries());
-        delete formData['privacy-policy'];
-        if (formData.phone) {
-          formData.phone = formData.phone.replace(/\D/g, '');
-        }
-        console.log(formData);
-        setTimeout(() => {
-          // evt.target.submit();
-          const url = form.getAttribute('action');
-          sendData(url, formData);
-          form.reset();
-        }, 3000);
-      }
-    });
-  };
-  handleFormSubmitPage('.js-modal-ticket-form', '.js-modal-ticket');
-  handleFormSubmitPage('.js-modal-partner-form', '.js-modal-partner');
-  handleFormSubmitPage('.js-modal-speaker-form', '.js-modal-speaker');
-  handleFormSubmitPage('.js-modal-bonus-form', '.js-modal-bonus');
 
   // Передать id выбранного билета в форму
   const sendIdToForm = (el) => {

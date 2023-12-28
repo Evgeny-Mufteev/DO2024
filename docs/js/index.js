@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Горизонтальный скролл в галериеи
   var horizontalScrollInGallery = function horizontalScrollInGallery() {
-    if (document.querySelector('.gallery__slider')) {
+    if (window.innerWidth >= 768 && document.querySelector('.gallery__slider')) {
       var controller = new ScrollMagic.Controller();
       var slider = document.querySelector('.gallery__slider');
       var horizontalScrollLength = slider.scrollWidth - window.innerWidth;
@@ -84,6 +84,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
   horizontalScrollInGallery();
+
+  // слайдер в галереии
+  var swiper;
+  var initSwiper = function initSwiper() {
+    swiper = new Swiper('.exposition__slider', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      loop: true
+    });
+  };
+  var checkSwiperInit = function checkSwiperInit() {
+    if (window.innerWidth < 768) {
+      if (!swiper || swiper.destroyed) {
+        initSwiper();
+      }
+    } else {
+      if (swiper) {
+        swiper.destroy();
+      }
+    }
+  };
+  checkSwiperInit();
+  window.addEventListener('resize', checkSwiperInit);
 
   // Функция для управления анимацией
   var manageAnimation = function manageAnimation(tickerElement, state) {
@@ -176,49 +199,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(error);
     });
   };
-
-  // Валидация формы
-  var handleFormSubmitPage = function handleFormSubmitPage(formItem, popup) {
-    var form = document.querySelector(formItem);
-    var modalBlock = document.querySelector(popup);
-    if (!form) {
-      return;
-    }
-    var btn = form.querySelector('.js-form-submit');
-    var phone = form.querySelector('input[name="phone"]');
-    var pristine = new Pristine(form);
-    var handleInputValidation = function handleInputValidation(inputElement) {
-      inputElement === null || inputElement === void 0 || inputElement.addEventListener('input', function () {
-        var valid = pristine.validate(inputElement);
-        btn.disabled = !valid;
-      });
-    };
-    handleInputValidation(phone);
-    form.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      var valid = pristine.validate();
-      if (valid) {
-        evt.preventDefault();
-        modalBlock.classList.add('success');
-        var formData = Object.fromEntries(new FormData(evt.target).entries());
-        delete formData['privacy-policy'];
-        if (formData.phone) {
-          formData.phone = formData.phone.replace(/\D/g, '');
-        }
-        console.log(formData);
-        setTimeout(function () {
-          // evt.target.submit();
-          var url = form.getAttribute('action');
-          sendData(url, formData);
-          form.reset();
-        }, 3000);
-      }
-    });
-  };
-  handleFormSubmitPage('.js-modal-ticket-form', '.js-modal-ticket');
-  handleFormSubmitPage('.js-modal-partner-form', '.js-modal-partner');
-  handleFormSubmitPage('.js-modal-speaker-form', '.js-modal-speaker');
-  handleFormSubmitPage('.js-modal-bonus-form', '.js-modal-bonus');
 
   // Передать id выбранного билета в форму
   var sendIdToForm = function sendIdToForm(el) {

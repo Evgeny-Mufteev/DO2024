@@ -107,6 +107,102 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   };
-
   handleBurgerMenu();
+
+  // работа модальных окон
+  const handleModalPopup = (el) => {
+    el = el.target;
+    const overlay = document.querySelector('.overlay');
+    const noScrollBody = document.body;
+
+    if (el.closest('.overlay')) {
+      document.querySelectorAll('.js-modal-block').forEach((el) => {
+        el.classList.remove('active');
+        overlay?.classList.remove('active');
+        noScrollBody?.classList.remove('no-scroll');
+      });
+    }
+    if (el.closest('.js-close')) {
+      document.querySelectorAll('.js-modal-block').forEach((el) => {
+        el.classList.remove('active');
+        overlay?.classList.remove('active');
+        noScrollBody?.classList.remove('no-scroll');
+      });
+    }
+    if (el.closest('.js-modal-btn')) {
+      const modalSelector = el.getAttribute('data-modal-target');
+      const modalToOpen = document.querySelector(modalSelector);
+      if (modalToOpen) {
+        modalToOpen.classList.add('active');
+        overlay.classList.add('active');
+        noScrollBody.classList.add('no-scroll');
+      }
+    }
+  };
+  document.addEventListener('click', handleModalPopup);
+
+  // Валидация формы
+  const handleFormSubmitPage = (formItem, popup) => {
+    const form = document.querySelector(formItem);
+    const modalBlock = document.querySelector(popup);
+
+    if (!form) {
+      return;
+    }
+
+    const btn = form.querySelector('.js-form-submit');
+    const phone = form.querySelector('input[name="phone"]');
+    const pristine = new Pristine(form);
+
+    const handleInputValidation = (inputElement) => {
+      inputElement?.addEventListener('input', () => {
+        const valid = pristine.validate(inputElement);
+        btn.disabled = !valid;
+      });
+    };
+    handleInputValidation(phone);
+
+    form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const valid = pristine.validate();
+
+      if (valid) {
+        evt.preventDefault();
+        modalBlock.classList.add('success');
+        const formData = Object.fromEntries(new FormData(evt.target).entries());
+        delete formData['privacy-policy'];
+        if (formData.phone) {
+          formData.phone = formData.phone.replace(/\D/g, '');
+        }
+        console.log(formData);
+        setTimeout(() => {
+          // evt.target.submit();
+          const url = form.getAttribute('action');
+          sendData(url, formData);
+          form.reset();
+        }, 3000);
+      }
+    });
+  };
+  handleFormSubmitPage('.js-modal-ticket-form', '.js-modal-ticket');
+  handleFormSubmitPage('.js-modal-partner-form', '.js-modal-partner');
+  handleFormSubmitPage('.js-modal-speaker-form', '.js-modal-speaker');
+  handleFormSubmitPage('.js-modal-bonus-form', '.js-modal-bonus');
+
+  // Яндекс карта
+  ymaps.ready(init);
+
+  function init() {
+    var map = new ymaps.Map('app', {
+      center: [56.330342, 43.992488],
+      zoom: 17,
+    });
+    map.controls.add('zoomControl');
+    // Добавление геометки
+    var placemark = new ymaps.Placemark([56.330342, 43.992488], {
+      hintContent: 'Нижний Новгород, ул. Нижне-Волжская набережная дом 11',
+      balloonContent: 'КПЦ Академия Маяк им. А.Д. Сахарова ',
+    });
+    map.geoObjects.add(placemark);
+  }
 });
