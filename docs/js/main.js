@@ -137,8 +137,41 @@ document.addEventListener('DOMContentLoaded', function () {
         noScrollBody.classList.add('no-scroll');
       }
     }
+    if (window.screen.width > 767) {
+      document.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Escape') {
+          evt.preventDefault();
+          document.querySelectorAll('.js-modal-block.active').forEach(function (modal) {
+            modal.classList.remove('active');
+          });
+          var _overlay = document.querySelector('.overlay');
+          _overlay === null || _overlay === void 0 || _overlay.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    }
   };
   document.addEventListener('click', handleModalPopup);
+
+  // отправка данных
+  var sendData = function sendData(url, data) {
+    fetch(url, {
+      method: 'POST',
+      body: data
+    }).then(function (response) {
+      console.log(response);
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    }).then(function (jsonData) {
+      console.log(jsonData);
+      window.location.href = 'http://localhost:3000/';
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  };
 
   // Валидация формы
   var handleFormSubmitPage = function handleFormSubmitPage(formItem, popup) {

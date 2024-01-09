@@ -41,7 +41,7 @@
   overflow: hidden;
 }
 
-.promo-info__title p {
+.promo-info__title span {
   color: var(--black-color);
   font-family: Unbounded;
   font-size: 92px;
@@ -49,6 +49,7 @@
   font-weight: 500;
   line-height: 110%;
   text-transform: uppercase;
+  display: block;
 }
 
 .promo-info__box {
@@ -2347,12 +2348,12 @@
     left: 20px;
   }
 
-  .promo-info__title p {
+  .promo-info__title span {
     font-size: 72px;
     margin-bottom: 8px;
   }
 
-  .promo-info__title p:last-child {
+  .promo-info__title span:last-child {
     margin-bottom: 0;
   }
 
@@ -2520,7 +2521,7 @@
     left: 0;
   }
 
-  .promo-info__title p {
+  .promo-info__title span {
     font-size: 52px;
   }
 
@@ -2905,7 +2906,7 @@
     width: 286px;
   }
 
-  .promo-info__title p {
+  .promo-info__title span {
     font-family: Unbounded;
     font-size: 42px;
     font-style: normal;
@@ -3643,7 +3644,7 @@
     row-gap: 10px;
   }
 
-  .promo-info__title p {
+  .promo-info__title span {
     font-family: Unbounded;
     font-size: 42px;
     font-style: normal;

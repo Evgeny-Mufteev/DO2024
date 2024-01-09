@@ -149,57 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   setupTickers();
 
-  // работа модальных окон
-  var handleModalPopup = function handleModalPopup(el) {
-    el = el.target;
-    var overlay = document.querySelector('.overlay');
-    var noScrollBody = document.body;
-    if (el.closest('.overlay')) {
-      document.querySelectorAll('.js-modal-block').forEach(function (el) {
-        el.classList.remove('active');
-        overlay === null || overlay === void 0 || overlay.classList.remove('active');
-        noScrollBody === null || noScrollBody === void 0 || noScrollBody.classList.remove('no-scroll');
-      });
-    }
-    if (el.closest('.js-close')) {
-      document.querySelectorAll('.js-modal-block').forEach(function (el) {
-        el.classList.remove('active');
-        overlay === null || overlay === void 0 || overlay.classList.remove('active');
-        noScrollBody === null || noScrollBody === void 0 || noScrollBody.classList.remove('no-scroll');
-      });
-    }
-    if (el.closest('.js-modal-btn')) {
-      var modalSelector = el.getAttribute('data-modal-target');
-      var modalToOpen = document.querySelector(modalSelector);
-      if (modalToOpen) {
-        modalToOpen.classList.add('active');
-        overlay.classList.add('active');
-        noScrollBody.classList.add('no-scroll');
-      }
-    }
-  };
-  document.addEventListener('click', handleModalPopup);
-
-  // отправка данных
-  var sendData = function sendData(url, data) {
-    fetch(url, {
-      method: 'POST',
-      body: data
-    }).then(function (response) {
-      console.log(response);
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Network response was not ok');
-      }
-    }).then(function (jsonData) {
-      console.log(jsonData);
-      window.location.href = 'http://localhost:3000/';
-    })["catch"](function (error) {
-      console.log(error);
-    });
-  };
-
   // Передать id выбранного билета в форму
   var sendIdToForm = function sendIdToForm(el) {
     el = el.target;

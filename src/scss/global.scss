@@ -130,7 +130,7 @@
     width: 498px;
     margin-bottom: 30px;
 
-    p {
+    address {
       color: var(--main-color);
       font-family: Montserrat;
       font-size: 20px;
@@ -614,7 +614,7 @@ body::-webkit-scrollbar-thumb {
       width: 354px;
       margin-bottom: 20px;
 
-      p {
+      address {
         font-size: 16px;
       }
     }
@@ -760,7 +760,7 @@ body::-webkit-scrollbar-thumb {
     &__adress {
       width: 210px;
 
-      p {
+      address {
         font-size: 14px;
       }
     }
@@ -896,7 +896,7 @@ body::-webkit-scrollbar-thumb {
     &__adress {
       width: 130px;
 
-      p {
+      address {
         font-size: 12px;
       }
     }

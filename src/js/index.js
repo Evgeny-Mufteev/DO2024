@@ -154,61 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupTickers();
 
-  // работа модальных окон
-  const handleModalPopup = (el) => {
-    el = el.target;
-    const overlay = document.querySelector('.overlay');
-    const noScrollBody = document.body;
-
-    if (el.closest('.overlay')) {
-      document.querySelectorAll('.js-modal-block').forEach((el) => {
-        el.classList.remove('active');
-        overlay?.classList.remove('active');
-        noScrollBody?.classList.remove('no-scroll');
-      });
-    }
-    if (el.closest('.js-close')) {
-      document.querySelectorAll('.js-modal-block').forEach((el) => {
-        el.classList.remove('active');
-        overlay?.classList.remove('active');
-        noScrollBody?.classList.remove('no-scroll');
-      });
-    }
-    if (el.closest('.js-modal-btn')) {
-      const modalSelector = el.getAttribute('data-modal-target');
-      const modalToOpen = document.querySelector(modalSelector);
-      if (modalToOpen) {
-        modalToOpen.classList.add('active');
-        overlay.classList.add('active');
-        noScrollBody.classList.add('no-scroll');
-      }
-    }
-  };
-  document.addEventListener('click', handleModalPopup);
-
-  // отправка данных
-  const sendData = (url, data) => {
-    fetch(url, {
-      method: 'POST',
-      body: data,
-    })
-      .then((response) => {
-        console.log(response);
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      })
-      .then((jsonData) => {
-        console.log(jsonData);
-        window.location.href = 'http://localhost:3000/';
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   // Передать id выбранного билета в форму
   const sendIdToForm = (el) => {
     el = el.target;

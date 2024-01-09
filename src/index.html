@@ -5,9 +5,16 @@
   @@include('include/head.html', {
   "title": "index page"
   })
-
+  <!-- предзагрузка шрифтов -->
+  <link rel="preload" href="./assets/fonts/Montserrat-Regular.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/Unbounded-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/Unbounded-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- стили библиотек -->
   <link href="./assets/plugins/animate/animate.min.css" rel="stylesheet">
   <link href="./assets/plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- стили проекта -->
   <link href="./css/global.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
 </head>
@@ -19,15 +26,15 @@
         <div class="header__inner">
           <div class="header__box">
             <a class="header-logo" href="index.html">
-              <img src="./assets/img/global/logo.svg" alt="logo">
+              <img src="./assets/img/global/logo.svg" alt="Digital-Оттепель логотип">
             </a>
             <div class="header__menu-wrap">
-              <button class="header__menu">
+              <button class="header__menu" aria-label="Открыть меню">
                 <span></span>
               </button>
             </div>
           </div>
-          <div class="header-content">
+          <nav class="header-content">
             <ul class="header__list">
               <li class="header__item">
                 <a class="header__link js-scroll-to js-nav-links" href="#tickets">
@@ -55,7 +62,7 @@
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
         </div>
       </div>
@@ -65,8 +72,9 @@
         <div class="promo__content">
           <div class="promo-info">
             <h1 class="promo-info__title">
-              <p class="animate__animated animate__fadeInLeft animate__slower">Digital-</p>
-              <p class="animate__animated animate__fadeInRight animate__slower">Оттепель</p>
+              <span class="animate__animated animate__fadeInLeft animate__slower">Digital-</span>
+              <br>
+              <span class="animate__animated animate__fadeInRight animate__slower">Оттепель</span>
             </h1>
             <div class="promo-info__holder animate__animated animate__fadeInLeft animate__slower">
               <div class="promo-info__box">
@@ -75,8 +83,10 @@
                   набережная, д. 11</p>
               </div>
               <div class="promo-info__btns">
-                <a class="promo-info__btn _red js-scroll-to" href="#tickets">Купить билет</a>
-                <button class="promo-info__btn _white js-modal-btn" data-modal-target="#modal-partner">стать
+                <a class="promo-info__btn _red js-scroll-to" href="#tickets"
+                  aria-label="Купить билет на мероприятие">Купить билет</a>
+                <button class="promo-info__btn _white js-modal-btn" data-modal-target="#modal-partner"
+                  aria-label="Стать партнёром мероприятия">стать
                   партнёром</button>
               </div>
             </div>
@@ -87,7 +97,7 @@
             <picture>
               <source media="(min-width: 480px)" srcset="./assets/img/global/header-index.png">
               <source media="(max-width: 479px)" srcset="./assets/img/global/header-index-mob.png">
-              <img src="./assets/img/global/header-index.png" alt="header-index">
+              <img src="./assets/img/global/header-index.png" alt="Промо-изображение мероприятия Digital-Оттепель">
             </picture>
           </div>
         </div>
@@ -145,7 +155,7 @@
             </div>
           </div>
           <div class="tickets__content">
-            <div class="tickets__item _large" id="offline_afterparty">
+            <article class="tickets__item _large" id="offline_afterparty">
               <div class="tickets__item-header">
                 <h2 class="page__title-h3 tickets__caption">офлайн + АФТЕРПАТИ</h2>
                 <ul class="tickets__list">
@@ -164,12 +174,12 @@
                   <p class="tickets__price-new">12 999 руб.</p>
                   <p class="tickets__price-old">14 999 руб.</p>
                 </div>
-                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
-                  type="button">купить
-                  билет</button>
+                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket" type="button"
+                  aria-label="Купить билет Офлайн + Афтерпати за 12 999 рублей">купить билет
+                </button>
               </div>
-            </div>
-            <div class="tickets__item _small" id="offline">
+            </article>
+            <article class="tickets__item _small" id="offline">
               <div class="tickets__item-header">
                 <h2 class="page__title-h3 tickets__caption">офлайн</h2>
                 <ul class="tickets__list">
@@ -187,12 +197,12 @@
                   <p class="tickets__price-new">2 999 руб.</p>
                   <p class="tickets__price-old">3 999 руб.</p>
                 </div>
-                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
-                  type="button">купить
-                  билет</button>
+                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket" type="button"
+                  aria-label="Купить билет офлайн за 2 999 рублей">купить билет
+                </button>
               </div>
-            </div>
-            <div class="tickets__item _small" id="online">
+            </article>
+            <article class="tickets__item _small" id="online">
               <div class="tickets__item-header">
                 <h2 class="page__title-h3 tickets__caption">онлайн</h2>
                 <ul class="tickets__list">
@@ -207,12 +217,12 @@
                   <p class="tickets__price-new">2 999 руб.</p>
                   <p class="tickets__price-old">3 999 руб.</p>
                 </div>
-                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
-                  type="button">купить
-                  билет</button>
+                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket" type="button"
+                  aria-label="Купить билет онлайн за 2 999 рублей">купить билет
+                </button>
               </div>
-            </div>
-            <div class="tickets__item _large" id="afterparty">
+            </article>
+            <article class="tickets__item _large" id="afterparty">
               <div class="tickets__item-header">
                 <h2 class="page__title-h3 tickets__caption">только АФТЕРПАТИ</h2>
                 <ul class="tickets__list">
@@ -227,11 +237,10 @@
                   <p class="tickets__price-new">7 999 руб.</p>
                   <p class="tickets__price-old">14 999 руб.</p>
                 </div>
-                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket"
-                  type="button">купить
-                  билет</button>
+                <button class="tickets__btn js-modal-btn js-buy-ticket" data-modal-target="#modal-ticket" type="button"
+                  aria-label="Купить билет только АФТЕРПАТИ за 7 999 рублей">купить билет</button>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -239,122 +248,124 @@
         <div class="container">
           <h2 class="page__title-h2 speakers__title">спикеры</h2>
           <div class="speakers__content">
-            <div class="speakers-item">
+            <article class="speakers-item">
               <div class="speakers-item__img">
                 <img src="./assets/img/index/speaker1.png" alt="speaker">
               </div>
-              <p class="speakers-item__name">Валентина Экимян Экимян</p>
+              <h3 class="speakers-item__name">Валентина Экимян Экимян</h3>
               <p class="speakers-item__desc">
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
               </p>
-            </div>
-            <div class="speakers-item">
+            </article>
+            <article class="speakers-item">
               <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker2.png" alt="speaker">
+                <img src="./assets/img/index/speaker2.png" alt="speaker" loading="lazy">
               </div>
-              <p class="speakers-item__name">Илья Редько</p>
-              <p class="speakers-item__desc">
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-              </p>
-            </div>
-            <div class="speakers-item">
-              <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker2.png" alt="speaker">
-              </div>
-              <p class="speakers-item__name">Илья Редько</p>
+              <h3 class="speakers-item__name">Илья Редько</h3>
               <p class="speakers-item__desc">
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
               </p>
-            </div>
-            <div class="speakers-item">
+            </article>
+            <article class="speakers-item">
               <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker3.png" alt="speaker">
+                <img src="./assets/img/index/speaker2.png" alt="speaker" loading="lazy">
               </div>
-              <p class="speakers-item__name">Екатерина Трубникова</p>
+              <h3 class="speakers-item__name">Илья Редько</h3>
+              <p class="speakers-item__desc">
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+              </p>
+            </article>
+            <article class="speakers-item">
+              <div class="speakers-item__img">
+                <img src="./assets/img/index/speaker3.png" alt="speaker" loading="lazy">
+              </div>
+              <h3 class="speakers-item__name">Екатерина Трубникова</h3>
               <p class="speakers-item__desc">
                 Руководительница креативного отдела CreativePeople Руководительница креативного отдела CreativePeople
                 Руководительница креативного отдела CreativePeople
               </p>
-            </div>
-            <div class="speakers-item">
+            </article>
+            <article class="speakers-item">
               <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker1.png" alt="speaker">
+                <img src="./assets/img/index/speaker1.png" alt="speaker" loading="lazy">
               </div>
-              <p class="speakers-item__name">Валентина Экимян Экимян</p>
+              <h3 class="speakers-item__name">Валентина Экимян Экимян</h3>
               <p class="speakers-item__desc">
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
                 Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
               </p>
-            </div>
-            <div class="speakers-item">
+            </article>
+            <article class="speakers-item">
               <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker2.png" alt="speaker">
+                <img src="./assets/img/index/speaker2.png" alt="speaker" loading="lazy">
               </div>
-              <p class="speakers-item__name">Илья Редько</p>
-              <p class="speakers-item__desc">
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
-              </p>
-            </div>
-            <div class="speakers-item">
-              <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker3.png" alt="speaker">
-              </div>
-              <p class="speakers-item__name">Екатерина Трубникова</p>
-              <p class="speakers-item__desc">
-                Руководительница креативного отдела CreativePeople Руководительница креативного отдела CreativePeople
-                Руководительница креативного отдела CreativePeople
-              </p>
-            </div>
-            <div class="speakers-item">
-              <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker1.png" alt="speaker">
-              </div>
-              <p class="speakers-item__name">Валентина Экимян Экимян</p>
-              <p class="speakers-item__desc">
-                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
-                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
-                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
-              </p>
-            </div>
-            <div class="speakers-item">
-              <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker2.png" alt="speaker">
-              </div>
-              <p class="speakers-item__name">Илья Редько</p>
+              <h3 class="speakers-item__name">Илья Редько</h3>
               <p class="speakers-item__desc">
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
                 Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
               </p>
-            </div>
-            <div class="speakers-item">
+            </article>
+            <article class="speakers-item">
               <div class="speakers-item__img">
-                <img src="./assets/img/index/speaker3.png" alt="speaker">
+                <img src="./assets/img/index/speaker3.png" alt="speaker" loading="lazy">
               </div>
-              <p class="speakers-item__name">Екатерина Трубникова</p>
+              <h3 class="speakers-item__name">Екатерина Трубникова</h3>
               <p class="speakers-item__desc">
                 Руководительница креативного отдела CreativePeople Руководительница креативного отдела CreativePeople
                 Руководительница креативного отдела CreativePeople
               </p>
-            </div>
+            </article>
+            <article class="speakers-item">
+              <div class="speakers-item__img">
+                <img src="./assets/img/index/speaker1.png" alt="speaker" loading="lazy">
+              </div>
+              <h3 class="speakers-item__name">Валентина Экимян Экимян</h3>
+              <p class="speakers-item__desc">
+                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
+                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
+                Копирайтер и любитель шуточек в Yandex Creative Studio 7.47 шуточек в Yandex Creative Studio 7.47
+              </p>
+            </article>
+            <article class="speakers-item">
+              <div class="speakers-item__img">
+                <img src="./assets/img/index/speaker2.png" alt="speaker" loading="lazy">
+              </div>
+              <h3 class="speakers-item__name">Илья Редько</h3>
+              <p class="speakers-item__desc">
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+                Основатель и креативный директор Only. Более 14 лет опыта в сфере digital-дизайна
+              </p>
+            </article>
+            <article class="speakers-item">
+              <div class="speakers-item__img">
+                <img src="./assets/img/index/speaker3.png" alt="speaker" loading="lazy">
+              </div>
+              <h3 class="speakers-item__name">Екатерина Трубникова</h3>
+              <p class="speakers-item__desc">
+                Руководительница креативного отдела CreativePeople Руководительница креативного отдела CreativePeople
+                Руководительница креативного отдела CreativePeople
+              </p>
+            </article>
           </div>
           <div class="speakers__btns">
-            <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker">Хочу стать
+            <button class="speakers__btn _red js-modal-btn" data-modal-target="#modal-speaker"
+              aria-label="Хочу стать спикером">Хочу стать
               спикером</button>
-            <a class="speakers__btn _white" href="speakers.html">смотреть всех спикеров</a>
+            <a class="speakers__btn _white" href="speakers.html" aria-label="Смотреть всех спикеров">смотреть всех
+              спикеров</a>
           </div>
         </div>
       </section>
@@ -362,8 +373,9 @@
         <div class="container">
           <div class="organizers-header">
             <h2 class="page__title-h2 organizers-header__title">
-              <p>Digital-</p>
-              <p>Оттепель —</p>
+              <span>Digital-</span>
+              <br>
+              <span>Оттепель —</span>
             </h2>
             <div class="organizers-header__text">
               <p>
@@ -378,33 +390,33 @@
             </div>
           </div>
           <div class="organizers-content">
-            <div class="organizers-item">
+            <article class="organizers-item">
               <div class="organizers-item__holder">
                 <div class="organizers-item__box">
                   <div class="organizers-item__img">
-                    <img src="./assets/img/index/dir1.png" alt="">
+                    <img src="./assets/img/index/dir1.png" alt="главный организатор конференции" loading="lazy">
                   </div>
                   <div class="organizers-item__sign">главный организатор конференции</div>
                 </div>
               </div>
               <div class="organizers-item__info">
-                <p class="organizers-item__name">КОНСТАНТИН ВЕРХОВИНСКИЙ</p>
+                <h3 class="organizers-item__name">КОНСТАНТИН ВЕРХОВИНСКИЙ</h3>
                 <p class="organizers-item__desc">генеральный директор агентства интернет-маркетинга R-Top</p>
               </div>
-            </div>
+            </article>
 
-            <div class="organizers-item _reverse">
+            <article class="organizers-item _reverse">
               <div class="organizers-item__box">
                 <div class="organizers-item__img">
-                  <img src="./assets/img/index/dir2.png" alt="">
+                  <img src="./assets/img/index/dir2.png" alt="продюссер конференции" loading="lazy">
                 </div>
                 <div class="organizers-item__sign">продюссер конференции</div>
               </div>
               <div class="organizers-item__holder">
-                <p class="organizers-item__name">Дарья бозакина</p>
+                <h3 class="organizers-item__name">Дарья бозакина</h3>
                 <p class="organizers-item__article">CEO SMM-агентства DashDash</p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -412,31 +424,31 @@
         <div class="container">
           <div class="gallery__slider">
             <div class="gallery__item _big">
-              <img src="./assets/img/index/gallery1.jpg" alt="">
+              <img src="./assets/img/index/gallery1.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery2.jpg" alt="">
+              <img src="./assets/img/index/gallery2.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery3.jpg" alt="">
+              <img src="./assets/img/index/gallery3.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _big">
-              <img src="./assets/img/index/gallery4.jpg" alt="">
+              <img src="./assets/img/index/gallery4.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery5.jpg" alt="">
+              <img src="./assets/img/index/gallery5.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery6.jpg" alt="">
+              <img src="./assets/img/index/gallery6.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _big">
-              <img src="./assets/img/index/gallery7.jpg" alt="">
+              <img src="./assets/img/index/gallery7.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery8.jpg" alt="">
+              <img src="./assets/img/index/gallery8.jpg" alt="" loading="lazy">
             </div>
             <div class="gallery__item _small">
-              <img src="./assets/img/index/gallery9.jpg" alt="">
+              <img src="./assets/img/index/gallery9.jpg" alt="" loading="lazy">
             </div>
           </div>
 
@@ -444,31 +456,31 @@
           <div class="exposition__slider swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide gallery__item _big">
-                <img src="./assets/img/index/gallery1.jpg" alt="">
+                <img src="./assets/img/index/gallery1.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery2.jpg" alt="">
+                <img src="./assets/img/index/gallery2.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery3.jpg" alt="">
+                <img src="./assets/img/index/gallery3.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _big">
-                <img src="./assets/img/index/gallery4.jpg" alt="">
+                <img src="./assets/img/index/gallery4.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery5.jpg" alt="">
+                <img src="./assets/img/index/gallery5.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery6.jpg" alt="">
+                <img src="./assets/img/index/gallery6.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _big">
-                <img src="./assets/img/index/gallery7.jpg" alt="">
+                <img src="./assets/img/index/gallery7.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery8.jpg" alt="">
+                <img src="./assets/img/index/gallery8.jpg" alt="" loading="lazy">
               </div>
               <div class="swiper-slide gallery__item _small">
-                <img src="./assets/img/index/gallery9.jpg" alt="">
+                <img src="./assets/img/index/gallery9.jpg" alt="" loading="lazy">
               </div>
             </div>
           </div>
@@ -487,7 +499,7 @@
             </div>
           </div>
           <div class="bonus-content">
-            <div class="bonus-item js-item _desc" data-name="прорыв года">
+            <article class="bonus-item js-item _desc" data-name="прорыв года">
               <h3 class="bonus-item__title page__title-h3 js-title">прорыв года</h3>
               <div class="bonus-item__box js-desc active">
                 <div class="bonus-item__info">
@@ -495,14 +507,15 @@
                     Номинация для молодых агентств до 5 лет (с момент регистрации юр. лица) и штатом до 15 человек.
                     Расскажите, как вы стартовали, что было сложного и интересного, куда вы стремитесь и о чем мечтаете
                   </p>
-                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
+                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                    aria-label="Подать заявку на номинацию 'Прорыв года'">подать заявку</button>
                 </div>
                 <div class="bonus-item__img">
-                  <img src="./assets/img/index/bonus1.png" alt="">
+                  <img src="./assets/img/index/bonus1.png" alt="номинация прорыв года" loading="lazy">
                 </div>
               </div>
-            </div>
-            <div class="bonus-item js-item _desc" data-name="дизайн года">
+            </article>
+            <article class="bonus-item js-item _desc" data-name="дизайн года">
               <h3 class="bonus-item__title page__title-h3 js-title">дизайн года</h3>
               <div class="bonus-item__box js-desc">
                 <div class="bonus-item__info">
@@ -511,14 +524,15 @@
                     ещё не запущен, но готовы макеты и есть действующий договор, который вы готовы предоставить —
                     присылайте!
                   </p>
-                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
+                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                    aria-label="Подать заявку на номинацию 'дизайн года'">подать заявку</button>
                 </div>
                 <div class="bonus-item__img">
-                  <img src="./assets/img/index/bonus2.png" alt="">
+                  <img src="./assets/img/index/bonus2.png" alt="номинация дизайн года" loading="lazy">
                 </div>
               </div>
-            </div>
-            <div class="bonus-item js-item _desc" data-name="сайт года">
+            </article>
+            <article class="bonus-item js-item _desc" data-name="сайт года">
               <h3 class="bonus-item__title page__title-h3 js-title">сайт года</h3>
               <div class="bonus-item__box js-desc">
                 <div class="bonus-item__info">
@@ -526,14 +540,15 @@
                     За прошедший 2022 год запустили интересный сайт? Присылайте! Поделитесь, какая была задача, какие
                     сложности, какие решения принимались и какой функционал в итоге у вас получился!
                   </p>
-                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
+                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                    aria-label="Подать заявку на номинацию 'сайт года'">подать заявку</button>
                 </div>
                 <div class="bonus-item__img">
-                  <img src="./assets/img/index/bonus3.png" alt="">
+                  <img src="./assets/img/index/bonus3.png" alt="номинация сайт года" loading="lazy">
                 </div>
               </div>
-            </div>
-            <div class="bonus-item js-item _desc" data-name="seo-кейс года">
+            </article>
+            <article class="bonus-item js-item _desc" data-name="seo-кейс года">
               <h3 class="bonus-item__title page__title-h3 js-title">seo-кейс года</h3>
               <div class="bonus-item__box js-desc">
                 <div class="bonus-item__info">
@@ -541,14 +556,15 @@
                     Номинация для компаний, которые собрали самое полное семантическое ядро, увеличил конверсии в тысячу
                     раз и пригнал тонну трафика. Расскажите нам о себе и своем проекте
                   </p>
-                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
+                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                    aria-label="Подать заявку на номинацию 'seo-кейс года'">подать заявку</button>
                 </div>
                 <div class="bonus-item__img">
-                  <img src="./assets/img/index/bonus4.png" alt="">
+                  <img src="./assets/img/index/bonus4.png" alt="номинация seo-кейс года" loading="lazy">
                 </div>
               </div>
-            </div>
-            <div class="bonus-item js-item _desc" data-name="smm-кейс года">
+            </article>
+            <article class="bonus-item js-item _desc" data-name="smm-кейс года">
               <h3 class="bonus-item__title page__title-h3 js-title">smm-кейс года</h3>
               <div class="bonus-item__box js-desc">
                 <div class="bonus-item__info">
@@ -556,13 +572,14 @@
                     Данная номинация для тех, кто классно оформляет и ведёт аккаунты, пишет интересные посты, снимает
                     Reels, крутит таргетированную рекламу. Ждём от вас кейс-гордость
                   </p>
-                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus">подать заявку</button>
+                  <button class="bonus-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                    aria-label="Подать заявку на номинацию 'smm-кейс года'">подать заявку</button>
                 </div>
                 <div class="bonus-item__img">
-                  <img src="./assets/img/index/bonus5.png" alt="">
+                  <img src="./assets/img/index/bonus5.png" alt="номинация smm-кейс года" loading="lazy">
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -571,170 +588,171 @@
         <div class="partners-holder">
           <div class="partners-content _left">
             <div class="partners__list">
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 1">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 1" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 2">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 2" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 7">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 7" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 8">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 8" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
             </div>
           </div>
           <div class="partners-content _right">
-            <d class="partners__list">
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 1">
+            <div class="partners__list">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 1" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 2">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 2" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 7">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 7" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 8">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 8" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 9">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 9" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 10">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 10" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 11">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 11" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 12">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 12" loading="lazy">
               </a>
-            </d iv>
+            </div>
           </div>
         </div>
         <h3 class="page__title-h3 partners__subtitle">информационные партнёры</h3>
         <div class="partners-block">
           <div class="partners-content _left">
             <div class="partners__list">
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 1">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 1" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 2">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 2" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 7">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 7" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 8">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 8" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
             </div>
           </div>
           <div class="partners-content _right">
-            <d class="partners__list">
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 1">
+            <div class="partners__list">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 1" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 2">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 2" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 3">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 3" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 4">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 4" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 5">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 5" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 6">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 6" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners1.png" alt="Item 7">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners1.png" alt="Item 7" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners2.png" alt="Item 8">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners2.png" alt="Item 8" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners3.png" alt="Item 9">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners3.png" alt="Item 9" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners4.png" alt="Item 10">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners4.png" alt="Item 10" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners5.png" alt="Item 11">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners5.png" alt="Item 11" loading="lazy">
               </a>
-              <a class="partners__item" href="javascript:void(0);">
-                <img src="./assets/img/index/partners6.png" alt="Item 12">
+              <a class="partners__item" href="javascript:void(0);" rel="nofollow">
+                <img src="./assets/img/index/partners6.png" alt="Item 12" loading="lazy">
               </a>
-            </d iv>
+            </div>
           </div>
         </div>
         <div class="partners-btns">
-          <button class="partners-btn js-modal-btn" data-modal-target="#modal-partner">стать партнёром</button>
+          <button class="partners-btn js-modal-btn" data-modal-target="#modal-partner"
+            aria-label="Стать партнёром мероприятия">стать партнёром</button>
         </div>
       </section>
     </main>
@@ -743,7 +761,8 @@
   <div class="overlay"></div>
 
   <!-- попап покупки билетов -->
-  <div class="modal-ticket js-modal-block js-modal-ticket" id="modal-ticket">
+  <div class="modal-ticket js-modal-block js-modal-ticket" id="modal-ticket" aria-labelledby="modal_title_ticket"
+    role="dialog" aria-modal="true">
     <div class="modal-ticket__success">
       <div class="modal-ticket__header">
         <div class="modal-ticket__title">Успешно!</div>
@@ -752,7 +771,7 @@
     </div>
     <div class="modal-ticket__content">
       <div class="modal-ticket__header">
-        <div class="modal-ticket__title">купить билет</div>
+        <div class="modal-ticket__title" id="modal_title_ticket">купить билет</div>
         <div class="modal-ticket__subtitle">Перед оплатой необходимо оставить свои актуальные контактные данные</div>
       </div>
       <form class="modal-ticket__form js-modal-ticket-form" action="/file_name/" method="post" name="modal_ticket"
@@ -770,8 +789,8 @@
               name="phone" required data-pristine-required-message="необходимо заполнить поле">
           </div>
           <div class="modal-ticket__input-wrap form-group">
-            <input type="text" class="modal-ticket__input form-control" placeholder="Должность, компания*""
-              name=" phone" required data-pristine-required-message="необходимо заполнить поле">
+            <input type="text" class="modal-ticket__input form-control" placeholder="Должность, компания*"
+              name="position_company" required data-pristine-required-message="необходимо заполнить поле">
           </div>
           <div class="modal-ticket__checkbox-wrap form-group">
             <input type="checkbox" class="modal-ticket__checkbox form-control" id="privacy-policy" name="privacy-policy"
@@ -785,11 +804,12 @@
             </label>
           </div>
         </div>
-        <button class="modal-ticket__btn js-form-submit" type="submit">Перейти к оплате</button>
+        <button class="modal-ticket__btn js-form-submit" type="submit" aria-label="Перейти к оплате">Перейти к
+          оплате</button>
         <input type="hidden" class="js-select-tickets" name="select_tickets" value="">
       </form>
     </div>
-    <button class="modal-ticket__close js-close">
+    <button class="modal-ticket__close js-close" aria-label="Закрыть окно">
       <svg class="icon-close">
         <use href="./assets/svg/sprite.svg#icon-close"></use>
       </svg>
@@ -797,7 +817,8 @@
   </div>
 
   <!-- попап стать партнером -->
-  <div class="modal-partner js-modal-block js-modal-partner" id="modal-partner">
+  <div class="modal-partner js-modal-block js-modal-partner" id="modal-partner" aria-labelledby="modal_title_partner"
+    role="dialog" aria-modal="true">
     <div class="modal-partner__success">
       <div class="modal-partner__header">
         <div class="modal-partner__title">Успешно!</div>
@@ -806,7 +827,7 @@
     </div>
     <div class="modal-partner__content">
       <div class="modal-partner__header">
-        <div class="modal-partner__title">Стать партнёром</div>
+        <div class="modal-partner__title" id="modal_title_partner">Стать партнёром</div>
       </div>
       <form class="modal-partner__form js-modal-partner-form" action="/file_name/" method="post" name="modal_partner"
         novalidate="true">
@@ -858,10 +879,11 @@
           </div>
 
         </div>
-        <button class="modal-partner__btn js-form-submit" type="submit">оставить заявку</button>
+        <button class="modal-partner__btn js-form-submit" type="submit" aria-label="Оставить заявку">оставить
+          заявку</button>
       </form>
     </div>
-    <button class="modal-ticket__close js-close">
+    <button class="modal-ticket__close js-close" aria-label="Закрыть окно">
       <svg class="icon-close">
         <use href="./assets/svg/sprite.svg#icon-close"></use>
       </svg>
@@ -869,7 +891,8 @@
   </div>
 
   <!-- попап стать спикером -->
-  <div class="modal-speaker js-modal-block js-modal-speaker" id="modal-speaker">
+  <div class="modal-speaker js-modal-block js-modal-speaker" id="modal-speaker" aria-labelledby="modal_title_speaker"
+    role="dialog" aria-modal="true">
     <div class="modal-speaker__success">
       <div class="modal-speaker__header">
         <div class="modal-speaker__title">Успешно!</div>
@@ -878,7 +901,7 @@
     </div>
     <div class="modal-speaker__content">
       <div class="modal-speaker__header">
-        <div class="modal-speaker__title">Стать спикером</div>
+        <div class="modal-speaker__title" id="modal_title_speaker">Стать спикером</div>
       </div>
       <form class="modal-speaker__form js-modal-speaker-form" action="/file_name/" method="post" name="modal_speaker"
         novalidate="true">
@@ -935,10 +958,11 @@
           </div>
 
         </div>
-        <button class="modal-speaker__btn js-form-submit" type="submit">оставить заявку</button>
+        <button class="modal-speaker__btn js-form-submit" type="submit" aria-label="Оставить заявку">оставить
+          заявку</button>
       </form>
     </div>
-    <button class="modal-speaker__close js-close">
+    <button class="modal-speaker__close js-close" aria-label="Закрыть окно">
       <svg class="icon-close">
         <use href="./assets/svg/sprite.svg#icon-close"></use>
       </svg>
@@ -946,7 +970,8 @@
   </div>
 
   <!-- попап премия -->
-  <div class="modal-bonus js-modal-block js-modal-bonus" id="modal-bonus">
+  <div class="modal-bonus js-modal-block js-modal-bonus" id="modal-bonus" aria-labelledby="modal_title_bonus"
+    role="dialog" aria-modal="true">
     <div class="modal-bonus__success">
       <div class="modal-bonus__header">
         <div class="modal-bonus__title">Успешно!</div>
@@ -955,7 +980,7 @@
     </div>
     <div class="modal-bonus__content">
       <div class="modal-bonus__header">
-        <div class="modal-bonus__title">Заявка на участие</div>
+        <div class="modal-bonus__title" id="modal_title_bonus">Заявка на участие</div>
       </div>
       <form class="modal-bonus__form js-modal-bonus-form" action="/file_name/" method="post" name="modal_bonus"
         novalidate="true">
@@ -1010,10 +1035,11 @@
           </div>
 
         </div>
-        <button class="modal-bonus__btn js-form-submit" type="submit">оставить заявку</button>
+        <button class="modal-bonus__btn js-form-submit" type="submit" aria-label="Оставить заявку">оставить
+          заявку</button>
       </form>
     </div>
-    <button class="modal-ticket__close js-close">
+    <button class="modal-ticket__close js-close" aria-label="Закрыть окно">
       <svg class="icon-close">
         <use href="./assets/svg/sprite.svg#icon-close"></use>
       </svg>

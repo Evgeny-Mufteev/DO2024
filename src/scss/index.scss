@@ -36,7 +36,7 @@
     &__title {
       overflow: hidden;
 
-      p {
+      span {
         color: var(--black-color);
         font-family: Unbounded;
         font-size: 92px;
@@ -44,6 +44,7 @@
         font-weight: 500;
         line-height: 110%;
         text-transform: uppercase;
+        display: block;
       }
     }
 
@@ -2119,7 +2120,7 @@
       left: 20px;
 
       &__title {
-        p {
+        span {
           font-size: 72px;
           margin-bottom: 8px;
 
@@ -2309,7 +2310,7 @@
       left: 0;
 
       &__title {
-        p {
+        span {
           font-size: 52px;
         }
       }
@@ -2686,7 +2687,7 @@
       }
 
       &__title {
-        p {
+        span {
           font-family: Unbounded;
           font-size: 42px;
           font-style: normal;
@@ -3360,11 +3361,8 @@
         row-gap: 10px;
       }
 
-
-
-
       &__title {
-        p {
+        span {
           font-family: Unbounded;
           font-size: 42px;
           font-style: normal;

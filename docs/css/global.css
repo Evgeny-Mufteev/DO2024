@@ -6,6 +6,13 @@
 }
 
 @font-face {
+  src: local("Montserrat"), url("../assets/fonts/Montserrat-Medium.woff2") format("woff2"), url("../assets/fonts/Montserrat-Medium.woff") format("woff"), url("../assets/fonts/Montserrat-Medium.ttf") format("ttf"), url("../assets/fonts/Montserrat-Medium.eot") format("eot");
+  font-family: "Montserrat";
+  font-style: "normal";
+  font-weight: 500;
+}
+
+@font-face {
   src: local("Unbounded"), url("../assets/fonts/Unbounded-Regular.woff2") format("woff2"), url("../assets/fonts/Unbounded-Regular.woff") format("woff"), url("../assets/fonts/Unbounded-Regular.ttf") format("ttf"), url("../assets/fonts/Unbounded-Regular.eot") format("eot");
   font-family: "Unbounded";
   font-style: "normal";
@@ -353,7 +360,7 @@ picture source {
   margin-bottom: 30px;
 }
 
-.footer__adress p {
+.footer__adress address {
   color: var(--main-color);
   font-family: Montserrat;
   font-size: 20px;
@@ -948,7 +955,7 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 20px;
   }
 
-  .footer__adress p {
+  .footer__adress address {
     font-size: 16px;
   }
 
@@ -1141,7 +1148,7 @@ body::-webkit-scrollbar-thumb {
     width: 210px;
   }
 
-  .footer__adress p {
+  .footer__adress address {
     font-size: 14px;
   }
 
@@ -1266,7 +1273,7 @@ body::-webkit-scrollbar-thumb {
     width: 130px;
   }
 
-  .footer__adress p {
+  .footer__adress address {
     font-size: 12px;
   }
 
