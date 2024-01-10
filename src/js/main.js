@@ -241,4 +241,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     map.geoObjects.add(placemark);
   }
+
+  // Передать выбранной премии в форму
+  const setNominationToModal = (el) => {
+    el = el.target;
+    if (el.closest('.js-modal-btn')) {
+      const nomination = el.closest('.bonus-item').getAttribute('data-name');
+      const modalInput = document.querySelector('.modal-bonus__input.selecting-item');
+      modalInput.value = nomination;
+
+      const allItems = document.querySelectorAll('.modal-bonus__item.js-sort-item');
+      allItems.forEach((item) => {
+        item.classList.remove('active');
+        if (item.textContent === nomination) {
+          item.classList.add('active');
+          const list = item.closest('.js-sort-list');
+          list.insertBefore(item, list.firstChild);
+        }
+      });
+    }
+  };
+
+  const bonusItemsContainer = document.querySelector('.bonus-content');
+  bonusItemsContainer?.addEventListener('click', setNominationToModal);
+
+  // Выбор пунктов партнерства в форме
+  const handleParameterSelection = (el) => {
+    if (document.querySelector('.js-sort-box')) {
+      el = el.target;
+
+      // Открытие списка
+      if (el.closest('.js-sort-btn')) {
+        el.closest('.js-sort-btn').classList.toggle('active');
+      }
+
+      // Удаление активного выбранного пункта из списка
+      if (el.closest('.js-sort-list')) {
+        const allEl = el.closest('.js-sort-list').querySelectorAll('.js-sort-item');
+        allEl.forEach((listItem) => {
+          listItem.classList.remove('active');
+        });
+      }
+
+      // Подстановка и перемещение выбранного пункта
+      if (el.classList.contains('js-sort-item')) {
+        el.classList.add('active');
+        const sortBox = el.closest('.js-sort-box');
+        sortBox.querySelector('.selecting-item').value = el.textContent;
+        sortBox.querySelector('.selecting-item').setAttribute('value', el.textContent);
+        document.querySelector('.selecting-item').dispatchEvent(new Event('input'));
+
+        // Перемещение выбранного пункта в начало списка
+        const list = el.closest('.js-sort-list');
+        list.insertBefore(el, list.firstChild);
+      }
+
+      // Закрытие списка
+      if (!el.closest('.js-sort-btn')) {
+        document.querySelectorAll('.js-sort-btn').forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      }
+    }
+  };
+  document.addEventListener('click', handleParameterSelection);
 });

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  @@include('include/head.html', {
+  "title": "premium page"
+  })
+
+  <link href="./assets/plugins/animate/animate.min.css" rel="stylesheet">
+  <link href="./css/global.css" rel="stylesheet">
+  <link href="./css/premium.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper" id="my-scrollbar">
+    <header class="header header-page animate__animated animate__fadeIn animate__slow">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__box">
+            <a class="header-logo" href="index.html">
+              <img src="./assets/img/global/logo.svg" alt="Логотип Digital Оттепель">
+            </a>
+            <div class="header__menu-wrap">
+              <button class="header__menu" aria-label="Открыть меню">
+                <span></span>
+              </button>
+            </div>
+          </div>
+          <nav class="header-content">
+            <ul class="header__list">
+              <!-- Уточнение ссылок и их назначения -->
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="index.html#tickets">
+                  <div class="header__line" data-text="билеты">билеты</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="#speakers">
+                  <div class="header__line" data-text="спикеры">спикеры</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-scroll-to js-nav-links" href="index.html#organizers">
+                  <div class="header__line" data-text="о конференции">о конференции</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="premia.html">
+                  <div class="header__line active" data-text="премия">премия</div>
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link js-nav-links" href="premium.html">
+                  <div class="header__line" data-text="программа">программа</div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="premium" id="premium">
+        <div class="container">
+          <div class="premium-header animate__animated animate__fadeIn animate__slower">
+            <div class="premium-header-inner animate__animated animate__fadeInRight animate__slower">
+              <h1 class="premium-header__title" aria-label="Независимая премия">независимая премия</h1>
+              <p class="premium-header__info">
+                Премия рассчитана на региональные digital-агентства, которым есть что показать и чем поделиться. Будем
+                рады видеть в числе участников коллег из Нижнего Новгорода, Казани, Кирова, Пензы, Владимира, других
+                регионов и областей.
+              </p>
+            </div>
+          </div>
+          <div class="premium-practical">
+            <h2 class="page__title-h2">Как принять участие?</h2>
+            <div class="premium-practical__inner">
+              <div class="premium-practical__item">
+                <p class="premium-practical__number">1.</p>
+                <p class="premium-practical__desc">
+                  Ознакомьтесь с номинациями и выберите подходящую номинацию.
+                </p>
+              </div>
+              <div class="premium-practical__item">
+                <p class="premium-practical__number">2.</p>
+                <p class="premium-practical__desc">
+                  Расскажите о себе, заполнив заявку на участие в форме ниже.
+                </p>
+              </div>
+              <div class="premium-practical__item">
+                <p class="premium-practical__number">3.</p>
+                <p class="premium-practical__desc">
+                  Оплатите участие до 31 марта. Каждый кейс оплачивается отдельно.
+                </p>
+              </div>
+              <div class="premium-practical__item">
+                <p class="premium-practical__number">4.</p>
+                <p class="premium-practical__desc">
+                  Отправьте кейс на info@digitalnn.ru до 3 апреля и ожидайте результатов.
+                </p>
+              </div>
+            </div>
+            <button class="premium-practical__btn">подробные условия</button>
+          </div>
+          <div class="premium-content bonus-content">
+            <h2 class="page__title-h2">номинации, премии</h2>
+            <div class="premium-content__inner">
+              <article class="premium-item__block bonus-item" data-name="прорыв года">
+                <p class="premium-item__subtitle">номинация для молодых агентств</p>
+                <div class="premium-item">
+                  <h3 class="premium-item__title page__title-h3">прорыв года</h3>
+                  <div class="premium-item__box">
+                    <div class="premium-item__info">
+                      <p class="premium-item__text">
+                        Номинация для молодых агентств до 5 лет (с момент регистрации юр. лица) и штатом до 15 человек.
+                        Расскажите, как вы стартовали, что было сложного и интересного, куда вы стремитесь и о чем
+                        мечтаете
+                      </p>
+                      <button class="premium-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                        aria-label="Подать заявку на номинацию 'Прорыв года'">
+                        подать заявку
+                      </button>
+                    </div>
+                    <div class="premium-item__img">
+                      <img src="./assets/img/index/bonus1.png" alt="номинация прорыв года" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="premium-item__block bonus-item" data-name="дизайн года">
+                <p class="premium-item__subtitle">номинация для сайтов, приложений, сервисов</p>
+                <div class="premium-item">
+                  <h3 class="premium-item__title page__title-h3">дизайн года</h3>
+                  <div class="premium-item__box">
+                    <div class="premium-item__info">
+                      <p class="premium-item__text">
+                        В этой номинации мы ждём от вас кейсы по дизайну сайтов, сервисов или социальных сетей. Если
+                        проект
+                        ещё не запущен, но готовы макеты и есть действующий договор, который вы готовы предоставить —
+                        присылайте!
+                      </p>
+                      <button class="premium-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                        aria-label="Подать заявку на номинацию 'дизайн года'">
+                        подать заявку
+                      </button>
+                    </div>
+                    <div class="premium-item__img">
+                      <img src="./assets/img/index/bonus2.png" alt="номинация дизайн года" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="premium-item__block bonus-item" data-name="сайт года">
+                <p class="premium-item__subtitle">номинация для сайтов, созданные и выпущенныe в 2023-2024 годах</p>
+                <div class="premium-item">
+                  <h3 class="premium-item__title page__title-h3">сайт года</h3>
+                  <div class="premium-item__box">
+                    <div class="premium-item__info">
+                      <p class="premium-item__text">
+                        За прошедший 2022 год запустили интересный сайт? Присылайте! Поделитесь, какая была задача,
+                        какие
+                        сложности, какие решения принимались и какой функционал в итоге у вас получился!
+                      </p>
+                      <button class="premium-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                        aria-label="Подать заявку на номинацию 'сайт года'">
+                        подать заявку
+                      </button>
+                    </div>
+                    <div class="premium-item__img">
+                      <img src="./assets/img/index/bonus3.png" alt="номинация сайт года" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="premium-item__block bonus-item" data-name="seo-кейс года">
+                <p class="premium-item__subtitle">номинация для агентств и инхаус-команд</p>
+                <div class="premium-item">
+                  <h3 class="premium-item__title page__title-h3">seo-кейс года</h3>
+                  <div class="premium-item__box js-desc">
+                    <div class="premium-item__info">
+                      <p class="premium-item__text">
+                        Номинация для компаний, которые собрали самое полное семантическое ядро, увеличил конверсии в
+                        тысячу
+                        раз и пригнал тонну трафика. Расскажите нам о себе и своем проекте
+                      </p>
+                      <button class="premium-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                        aria-label="Подать заявку на номинацию 'seo-кейс года'">
+                        подать заявку
+                      </button>
+                    </div>
+                    <div class="premium-item__img">
+                      <img src="./assets/img/index/bonus4.png" alt="номинация seo-кейс года" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="premium-item__block bonus-item" data-name="smm-кейс года">
+                <p class="premium-item__subtitle">номинация для агентств и инхаус-команд</p>
+                <div class="premium-item">
+                  <h3 class="premium-item__title page__title-h3">smm-кейс года</h3>
+                  <div class="premium-item__box">
+                    <div class="premium-item__info">
+                      <p class="premium-item__text">
+                        Данная номинация для тех, кто классно оформляет и ведёт аккаунты, пишет интересные посты,
+                        снимает
+                        Reels, крутит таргетированную рекламу. Ждём от вас кейс-гордость
+                      </p>
+                      <button class="premium-item__btn js-modal-btn" data-modal-target="#modal-bonus"
+                        aria-label="Подать заявку на номинацию 'smm-кейс года'">
+                        подать заявку
+                      </button>
+                    </div>
+                    <div class="premium-item__img">
+                      <img src="./assets/img/index/bonus5.png" alt="номинация smm-кейс года" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+    @@include('include/footer.html')
+  </div>
+  <div class="overlay"></div>
+
+  <!-- якорь наверх -->
+  <div class="toTop">
+    <svg class="arrow-up">
+      <use href="./assets/svg/sprite.svg#arrow-up"></use>
+    </svg>
+  </div>
+
+  <!-- попап премия -->
+  <div class="modal-bonus js-modal-block js-modal-bonus" id="modal-bonus" aria-labelledby="modal_title_bonus"
+    role="dialog" aria-modal="true">
+    <div class="modal-bonus__success">
+      <div class="modal-bonus__header">
+        <div class="modal-bonus__title">Успешно!</div>
+        <div class="modal-bonus__subtitle">Благодарим за заявку. Мы свяжемся с вами в ближайшее время</div>
+      </div>
+    </div>
+    <div class="modal-bonus__content">
+      <div class="modal-bonus__header">
+        <div class="modal-bonus__title" id="modal_title_bonus">Заявка на участие</div>
+      </div>
+      <form class="modal-bonus__form js-modal-bonus-form" action="/file_name/" method="post" name="modal_bonus"
+        novalidate="true">
+        <div class="modal-bonus__box">
+
+          <div class="modal-bonus__input-wrap form-group js-sort-box">
+            <input type="text" class="modal-bonus__input selecting-item js-sort-btn form-control"
+              placeholder="Номинация*" readonly="" required="" name="selected-item"
+              data-pristine-required-message="необходимо заполнить поле">
+            <svg class="chevron-up">
+              <use href="./assets/svg/sprite.svg#chevron-up"></use>
+            </svg>
+            <ul class="modal-bonus__list js-sort-list">
+              <li class="modal-bonus__item js-sort-item">прорыв года</li>
+              <li class="modal-bonus__item js-sort-item">дизайн года</li>
+              <li class="modal-bonus__item js-sort-item">сайт года</li>
+              <li class="modal-bonus__item js-sort-item">seo-кейс года</li>
+              <li class="modal-bonus__item js-sort-item">smm-кейс года</li>
+            </ul>
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="text" class="modal-bonus__input form-control" placeholder="Регион*" name="region" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="text" class="modal-bonus__input form-control" placeholder="Контактное лицо (ФИО)"
+              name="full-name">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="email" class="modal-bonus__input form-control" placeholder="Еmail*" name="email" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__input-wrap form-group">
+            <input type="tel" class="modal-bonus__input form-control" placeholder="+7 (999) 999-99-99*" minlength="18"
+              name="phone" required data-pristine-required-message="необходимо заполнить поле">
+          </div>
+
+          <div class="modal-bonus__checkbox-wrap form-group">
+            <input type="checkbox" class="modal-bonus__checkbox form-control" id="privacy-policy4" name="privacy-policy"
+              required data-pristine-required-message="необходимо заполнить поле">
+            <label for="privacy-policy4">
+              <span class="privacy-policy__text">
+                Я согласен на обработку персональных данных и ознакомился с
+                <a href="javascript:void(0);" class="privacy-policy__link" target="_blank">
+                  политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
+
+        </div>
+        <button class="modal-bonus__btn js-form-submit" type="submit" aria-label="Оставить заявку">оставить
+          заявку</button>
+      </form>
+    </div>
+    <button class="modal-bonus__close js-close" aria-label="Закрыть окно">
+      <svg class="icon-close">
+        <use href="./assets/svg/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=89466487-2874-429c-ba1d-e13fa6a692bb"
+    type="text/javascript"></script>
+  <script src="./assets/plugins/smoothscroll/smoothscroll.min.js"></script>
+  <script src="./assets/plugins/pristine/pristine.min.js"></script>
+  <script src="./js/main.js"></script>
+  <!-- <script src="./js/premium.js"></script> -->
+</body>
+
+</html>

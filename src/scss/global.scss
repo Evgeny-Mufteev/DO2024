@@ -215,6 +215,10 @@
       &:hover {
         color: var(--red-color);
       }
+
+      &:first-of-type:hover {
+        color: var(--main-color);
+      }
     }
   }
 
